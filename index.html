@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>MyGame</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animate.css">
+    <link rel="stylesheet" href="slide.css">
+    <link rel="stylesheet" href="swiper.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <div id="game">
+                    <span id="gameover" class="animated zoomInUp" style="display: none;">Game Over</span>
+                    <div class="helps">
+                        <button id="gamestart" class="mybutton"><span id="giris">Başla</span></button>
+                        <button id="qeydiyyat" class="mybutton"><span>Giriş</span></button>
+                        <button id="haqqinda" class="mybutton"><span id="haqqinda">Oyun Haqqında</span></button>
+                    </div>
+                    <div id="haqqindashow" style="display: none;">
+                        <img src="shekiller/haqqinda.png" alt="" width="600px" height="600px">
+                        <div class="haqqindaslide">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="card">
+                                            <div class="sliderText">
+                                                <h3>Bayramlıq Yumurtalar</h3>
+                                            </div>
+                                            <div class="content">
+                                                Oyun Başladiqdan sonra yuxarıdan balonlar düşəcək balonların içində yumurtalar var siz bu balonları yerə çatana kimi partlatmağa çalışmalısınız partladılan balonları sizin dovşanınız izləyir və oradan düşən yumurtaları səbətə yığır :) Beleliklə həm səbətinizdəki
+                                                yumurtaların sayı artır hemdə sizə verilən vaxtın üzərinə vaxt elavə edilir. Nə qədər cəld olsanız bir o qədər çox Bayramlıq yumurta yığa bilərsiniz :) Uğurlar
+                                                <br><hr>Sağa çəkib ətraflı qaydalarla tanış ola bilərsiniz
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card">
+                                            <div class="sliderText">
+                                                <h3>Əsas Qaydalar</h3>
+                                            </div>
+                                            <div class="content">Oyunu qeydiyyatdan keçib və yaxud Qonaq kimi oynaya bilərsiniz Qeydiyyatlı istifadəçi bir çox funksiyalara sahib olacaq Ancaq sizə biz oyunu yoxlamağınız uçun Qonaq kimi oynamag şansıda veririk</div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card">
+                                            <div class="sliderText">
+                                                <h3>Qonaq Qaydaları</h3>
+                                            </div>
+                                            <div class="content">1) Sizin topladığınız yumurtalar Yadda qalmayacaq Yeni oyuna başlayarkən silinəcəkdir
+                                                <div>2) Reytingdə yer almayacağsınız
+                                                </div>
+                                                <div>3) Level səviyyəniz artmayacaq
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card">
+                                            <div class="sliderText">
+                                                <h3>Qeydiyyat Qaydaları</h3>
+                                            </div>
+                                            <div class="content">1) Yumurtalarınız hər oyun sonu yaddaşa veriləcəkdir
+                                                <div>2) Sonuncu Oyun nəticələri,Ən Yaxşı nəticəniz və ümumi nəticələrinizi görə biləcəksiniz
+                                                </div>
+                                                <div>3) Level funksiyası aktiv olacaq
+                                                </div>
+                                                <div>4) Ümumi reytingin aktivləşməsi
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cloud"></div>
+                </div>
+                <div id="xal" style="display: none;"></div>
+                <div class="lovhe" style="display: none;">
+                </div>
+                <div id="vaxt" style="display: none;"></div>
+            </div>
+            <div class="col-4">
+                <div class="melumatlar">
+                    <div class="esas">
+                        <div class="alert alert-dark text-dark" style="    right: 5px;">Reyting</div>
+                        <img class="animated flash delay-10s" src="shekiller/reyting1.png" alt="" srcset="" width="250px" height="300px" style="margin-left: 20px;">
+                        <img class="animated flash delay-10s" src="shekiller/reyting2.png" alt="" srcset="" width="150px" height="200px">
+                        <img class="animated flash delay-10s" src="shekiller/reyting3.png" alt="" srcset="" width="150px" height="200px">
+
+                    </div>
+                    <div id="qeydiyyatshow" style="display: none;">
+                        <div class="hero">
+                            <div class="form-box">
+                                <div>
+                                    <div class="alert alert-primary">
+                                        <button type="button" class="btn btn-primary" onclick="login()">Login</button>
+                                        <button type="button" class="btn btn-dark" onclick="register()">Register</button>
+                                    </div>
+                                </div>
+                                <div id="login" class="input-group">
+                                    <input type="text" id="username_log" class="input-field" placeholder="User ID">
+                                    <input type="password" id="password_log" class="input-field" placeholder="Enter Password">
+                                    <button type="submit" id="btnlogin" class="submit-btn">Login</button>
+                                    <div id="okay"></div>
+                                </div>
+                                <div id="register" class="input-group">
+                                    <input type="text" id="username" class="input-field" placeholder="User ID">
+                                    <input type="email" id="email" class="input-field" placeholder="Email">
+                                    <input type="password" id="password" class="input-field" placeholder="Enter Password">
+                                    <input type="password" id="password2" class="input-field" placeholder="Enter Again Password">
+                                    <button type="submit" id="btnregister" class="submit-btn">Register</button>
+                                    <div id="tamam"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="basla animated bounce">
+                        <!-- <img src="shekiller/neticetablosu.png" width="270px" height="600px">
+                        <div class="neticeler">
+                            <div>Level:</div>
+                            <div>Best Score:</div>
+                            <div>Sonuncu Oyun Scoru:</div>
+                            <div>Umumi Toplanan Yumurtalar:</div>
+                            <div>username:</div>
+                        </div> -->
+                        <div class="neticeler">
+                            <div class="p-3 mb-2 bg-success text-black" id="level">Level:</div>
+                            <div class="p-3 mb-2 bg-danger text-white" id="best_score">Best Score:</div>
+                            <div class="p-3 mb-2 bg-danger text-white" id="new_score">Sonuncu Oyun Scoru:</div>
+                            <div class="p-3 mb-2 bg-danger text-white" id="total_score">Umumi Toplanan Yumurtalar:</div>
+                            <div class="p-3 mb-2 bg-success text-black" id="usernames"></div>
+                        </div>
+                        <div class="text-center">
+                            <img src="shekiller/sebetlidovsan.png" alt="" srcset="" id="dovshan" width="270px" height="290px">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var x = document.getElementById('login')
+        var y = document.getElementById('register')
+
+        function register() {
+            x.style.left = "-400px"
+            y.style.left = "10px"
+        }
+
+        function login() {
+            x.style.left = "10px"
+            y.style.left = "-450px"
+        }
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 200,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        });
+    </script>
+    <script src="javascript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

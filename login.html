@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+                <button type="button" class="btn btn-success" onclick="login()">Login</button>
+                <button type="button" class="btn btn-warning" onclick="register()">Register</button>
+            </div>
+            <form id="login" class="input-group">
+                <input type="text" class="input-field" placeholder="User ID">
+                <input type="text" class="input-field" placeholder="Enter Password">
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+            <form id="register" class="input-group">
+                <input type="text" class="input-field" placeholder="User ID">
+                <input type="text" class="input-field" placeholder="Email">
+                <input type="text" class="input-field" placeholder="Enter Password">
+                <input type="text" class="input-field" placeholder="Enter Again Password">
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        var x = document.getElementById('login')
+        var y = document.getElementById('register')
+
+        function register() {
+            x.style.left = "-400px"
+            y.style.left = "50px"
+        }
+
+        function login() {
+            x.style.left = "50px"
+            y.style.left = "-450px"
+        }
+    </script>
+</body>
+
+</html>

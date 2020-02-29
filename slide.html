@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="slide.css">
+    <link rel="stylesheet" href="swiper.min.css">
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="card">
+                    <div class="sliderText">
+                        <h3>Bayramlıq Yumurtalar</h3>
+                    </div>
+                    <div class="content">
+                         Oyun Başladiqdan sonra yuxarıdan balonlar düşəcək balonların içində yumurtalar var siz bu balonları yerə çatana kimi
+                         partlatmağa çalışmalısınız partladılan balonları sizin dovşanınız izləyir və oradan düşən yumurtaları səbətə yığır :)
+                         Beleliklə həm səbətinizdəki yumurtaların sayı artır hemdə sizə verilən vaxtın üzərinə vaxt elavə edilir.
+                         Nə qədər cəld olsanız bir o qədər çox Bayramlıq yumurta yığa bilərsiniz :) Uğurlar
+                        </div>
+            </div>     
+        </div>
+        <div class="swiper-slide">
+            <div class="card">
+                <div class="sliderText">
+                    <h3>Əsas Qaydalar</h3>
+                </div>
+                <div class="content">Oyunu qeydiyyatdan keçib və yaxud Qonaq kimi oynaya bilərsiniz
+                    Qeydiyyatlı istifadəçi bir çox funksiyalara sahib olacaq
+                    Ancaq sizə biz oyunu yoxlamağınız uçun Qonaq kimi oynamag şansıda veririk</div>
+        </div>     
+        </div>
+        <div class="swiper-slide">
+            <div class="card">
+                <div class="sliderText">
+                    <h3>Qonaq Qaydaları</h3>
+                </div>
+                <div class="content">1)  Sizin topladığınız yumurtalar Yadda qalmayacaq Yeni oyuna başlayarkən silinəcəkdir
+                    <div>2)  Reytingdə yer almayacağsınız
+                    </div>
+                    <div>3)  Level səviyyəniz artmayacaq
+                    </div>
+                </div>
+        </div>     
+    </div>
+    <div class="swiper-slide">
+        <div class="card">
+            <div class="sliderText">
+                <h3>Qeydiyyat Qaydaları</h3>
+            </div>
+            <div class="content">1) Yumurtalarınız hər oyun sonu yaddaşa veriləcəkdir
+                <div>2)  Sonuncu Oyun nəticələri,Ən Yaxşı nəticəniz və ümumi nəticələrinizi görə biləcəksiniz
+                </div>
+                <div>3)  Level funksiyası aktiv olacaq
+                </div>
+                <div>4)  Ümumi reytingin aktivləşməsi
+                </div>
+            </div>
+    </div>     
+</div>
+
+    </div>
+</div>
+    <script src="swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+          effect: 'coverflow',
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: 'auto',
+          coverflowEffect: {
+            rotate:  50,
+            stretch: 0,
+            depth: 200,
+            modifier: 1,
+            slideShadows : true,
+          },
+          pagination: {
+            el: '.swiper-pagination',
+          },
+        });
+      </script>
+</body>
+</html>

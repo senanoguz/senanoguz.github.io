@@ -16,7 +16,7 @@ var current_user
     var secondgamer
     var threegamer
     var raiting = []
-    console.log(user)
+    // console.log(user)
     if (user !== null){
         
         for (i = 0 ; i < users.length;i++)
@@ -24,7 +24,7 @@ var current_user
 
         if(users[i].username === user || users[i].usernamereg === user){
         current_user = i
-        console.log(users[i].usernamereg)
+        // console.log(users[i].usernamereg)
         }
         if(users[i].usernamereg === '' || users[i].username === ''){
         current_user = i
@@ -52,7 +52,7 @@ var current_user
                 $('#threegamerpoint').text(raiting[2])
             }
         }
-        console.log(raiting)
+        // console.log(raiting)
         var level = users[current_user].level
         var bestscore = users[current_user].bestscore
         var newscore = users[current_user].newscore
@@ -202,6 +202,7 @@ var current_user
             }
             count--;
             document.getElementById("vaxt").innerHTML = count / 100 + " s";
+            
         }
 
         function gameover() {

@@ -86,10 +86,10 @@ var current_user
         var emailreg = $('#email').val()
         var passwordreg = $('#password').val()
         var password2reg = $('#password2').val()
-        bestscore = 0
-        newscore = 0
-        totalscore = 0
-        level = 0
+        bestscore = '0'
+        newscore = '0'
+        totalscore = '0'
+        level = '0'
         if (username === '') {
 
             $('#tamam').css('display', 'block').addClass('alert alert-danger').text(`Xeta: Username bos ola bilmez`)

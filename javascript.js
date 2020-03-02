@@ -266,7 +266,6 @@ function faiz() {
                 faizcubugu =  ((totalscore + xal) / 10) *100;
                 $('#bar2').text(faizcubugu)
                 $('#level').text(`Level:  ${level}`)
-                $('#level').addClass('animated bounce')
                $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
              }
              if(totalscore + xal >=10 && totalscore+xal < 25){
@@ -274,27 +273,27 @@ function faiz() {
                 kecid = 25
                 faizcubugu =  ((totalscore + xal) / 25) *100;
                 $('#bar2').text(faizcubugu)
+                console.log('level1')
                 $('#level').text(`Level:  ${level}`)
-                $('#level').addClass('animated bounce')
                $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
              }
              if(totalscore + xal >=25 && totalscore+xal < 75){
-                level = 3;
+                console.log('level12')
+
+                level = 2;
                 kecid = 75
                 faizcubugu =  ((totalscore + xal) / 75) *100;
                 $('#bar2').text(faizcubugu)
                 $('#level').text(`Level:  ${level}`)
-                $('#level').addClass('animated bounce')
                $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
 
              }
              if(totalscore + xal >=75 && totalscore+xal < 150){
-                level = 4;
+                level = 3;
                 kecid = 150
                 faizcubugu =  ((totalscore + xal) / 150) *100;
                 $('#bar2').text(faizcubugu)
                 $('#level').text(`Level:  ${level}`)
-                $('#level').addClass('animated bounce')
                 $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
              }
              if(totalscore + xal >=150 && totalscore+xal < 500){
@@ -305,7 +304,6 @@ function faiz() {
                console.log(faizcubugu)
                $('#bar2').text(faizcubugu)
                $('#level').text(`Level:  ${level}`)
-               $('#level').addClass('animated bounce')
                $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
             }
          

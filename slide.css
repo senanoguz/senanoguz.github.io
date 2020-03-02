@@ -50,11 +50,11 @@
     background: #f32167;
 }
 .swiper-slide:nth-child(3) .sliderText{
-    background: #f0f321;
+    background: linear-gradient(to right, #d4bb2d, #ed2f9e);
 }
 .swiper-slide:nth-child(4) .sliderText{
-    background: #21f3d7;
+    background: linear-gradient(to right, #020e13, #ed2f2f)
 }
 .swiper-slide:nth-child(5) .sliderText{
-    background: #21f391;
+    background: linear-gradient(to right, #020e13, #ed2f2f)
 }

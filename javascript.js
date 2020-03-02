@@ -248,6 +248,7 @@ var mini =0
           var baloncssHeight
           var bosalt
           function userGame() {
+            $('.melumatlar').css('background','url(shekiller/background.png)')
               count = 6000
               $('#gameoverimg').hide()
               $('#gameover').hide()
@@ -288,6 +289,7 @@ var mini =0
               }
       
               function gameOverUser() {
+                $('.melumatlar').css('background','url(shekiller/tabloranking.png)')
                 $('#gamestart').hide()
                 $('#qeydiyyat').hide()
                   console.table(email,username,bestscore,totalscore,level,newscore)
@@ -575,6 +577,7 @@ var mini =0
         var baloncssHeight
         var bosalt
         function guestGame() {
+            $('.melumatlar').css('background','url(shekiller/background.jpg)')
             count = 6000
             $('#gameoverimg').hide()
             $('#gameover').hide()
@@ -614,6 +617,7 @@ var mini =0
             }
     
             function gameOverGuest() {
+                $('.melumatlar').css('background','url(shekiller/tabloranking.png)')
                 $('.esas').show()
                 $('.basla').hide()
                 bosalt.empty()

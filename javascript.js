@@ -264,7 +264,7 @@ $(document).ready(function() {
                 var kecid
 
                 function faiz() {
-
+                    $('#level').empty()
                     if (totalscore + xal >= -1 && totalscore + xal < 10) {
                         level = 0;
                         kecid = 10

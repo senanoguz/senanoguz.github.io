@@ -94,17 +94,64 @@
             <div class="col-4" class="noselect">
                 <div class="melumatlar">
                     <div class="esas">
-                        <div class="alert alert-dark text-dark" style="    right: 5px;">Reyting</div>
-                        <img class="animated flash delay-10s" src="shekiller/reyting1.png" alt="" srcset="" width="250px" height="300px" style="margin-left: 20px;">
-                        <img class="animated flash delay-10s" src="shekiller/reyting2.png" alt="" srcset="" width="150px" height="200px">
-                        <img class="animated flash delay-10s" src="shekiller/reyting3.png" alt="" srcset="" width="150px" height="200px">
+                        <div class="ratingback">
+                            <div class="button-boxid">
+                                <div id="btnid"></div>
+                                <button type="button" class="changebtn" onclick="bestscoreshow()">BestScore</button>
+                                <button type="button" class="changebtn" onclick="totalscoreshow()">Totalscore</button>
+                                <button type="button" class="changebtn" onclick="levelshow()">Level</button>
+                                <div class="gruoprating" id="bestscoreid">
+                                   <ul>
+                                       <li class="1item rating">1 yer</li>
+                                       <li class="2item rating">2 yer</li>
+                                       <li class="3item rating">3 yer</li>
+                                       <li class="4item rating">4 yer</li>
+                                       <li class="5item rating">5 yer</li>
+                                       <li class="6item rating">6 yer</li>
+                                       <li class="7item rating">7 yer</li>
+                                       <li class="8item rating">8 yer</li>
+                                       <li class="9item rating">9 yer</li>
+                                       <li class="10item rating">10 yer</li>
+                                   </ul>
+                               </div>
+                               <div class="gruoprating" id="totalscoreid">
+                                  <ul>
+                                      <li class="1item rating">1 yeree</li>
+                                      <li class="2item rating">2 yeree</li>
+                                      <li class="3item rating">3 yeeeer</li>
+                                      <li class="4item rating">4 yeeeeer</li>
+                                      <li class="5item rating">5 yer</li>
+                                      <li class="6item rating">6 yeeeeer</li>
+                                      <li class="7item rating">7 yer</li>
+                                      <li class="8item rating">8 yeer</li>
+                                      <li class="9item rating">9 yer</li>
+                                      <li class="10item rating">10 yer</li>
+                                  </ul>
+                              </div>
+                              <div class="gruoprating" id="levelid">
+                               <ul>
+                                   <li class="1item rating">1 yeree</li>
+                                   <li class="2item rating">2 yeree</li>
+                                   <li class="3item rating">3 yeeeer</li>
+                                   <li class="4item rating">4 yeeeeer</li>
+                                   <li class="5item rating">5 yer</li>
+                                   <li class="6item rating">6 yeeeeer</li>
+                                   <li class="7item rating">7 yer</li>
+                                   <li class="8item rating">8 yeer</li>
+                                   <li class="9item rating">9 yer</li>
+                                   <li class="10item rating">10 yer</li>
+                               </ul>
+                           </div>
+                            </div>
+                   
+                        </div>
 
                     </div>
                     <div id="qeydiyyatshow" style="display: none;">
                         <div class="hero">
                             <div class="form-box">
                                 <div>
-                                    <div class="alert alert-primary">
+                                    <div class="alert alert-primary userlogin">
                                         <button type="button" class="btn btn-primary" onclick="login()">Login</button>
                                         <button type="button" class="btn btn-dark" onclick="register()">Register</button>
                                     </div>
@@ -188,6 +235,10 @@
             },
         });
     </script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-storage.js"></script>
     <script src="javascript.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

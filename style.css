@@ -68,6 +68,7 @@
 }
 
 #game {
+    z-index: 1;
     cursor: url(shekiller/cursor/cursor.cur), pointer;
     min-width: 100%;
     min-height: 600px;
@@ -203,12 +204,6 @@
     position: relative;
 }
 
-.esas {
-    top: 20px;
-    /* padding: 30px; */
-    position: absolute;
-    left: 30px;
-}
 
 .melumatlar {
     height: 600px;
@@ -235,6 +230,7 @@
 }
 
 #vaxt {
+    z-index: 2;
     color: white;
     position: absolute;
     font-size: 40px;
@@ -246,7 +242,7 @@ body {
 }
 
 #xal {
-    z-index: 1;
+    z-index: 3;
     position: absolute;
     top: 475px;
     left: 100px;
@@ -259,7 +255,7 @@ body {
     top: 437px;
     left: 20px;
     background: url(shekiller/xal.png);
-    z-index: 0;
+    z-index: 2;
     background-repeat: no-repeat;
 }
 
@@ -348,9 +344,11 @@ body {
     box-shadow: 0 0 20px #ff6224b0;
     border-radius: 30px;
 }
-
-.input-group {
-    top: 180px;
+li {
+    font-size:14px !important;
+}
+.gruoprating {
+    top: 55px;
     position: absolute;
     width: 280px;
     transition: .5s;
@@ -389,3 +387,77 @@ body {
     left: 500px;
     top: -130px;
 }
+
+/* reytingsistemi */
+.esas {
+    /* padding: 30px; */
+    z-index: -5;
+}
+.ratingback{
+    position: absolute;
+    top:0px;
+}
+
+
+.button-boxid{
+    width: 370px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius: 30px;
+}
+
+.changebtn{
+    padding: 10px 30px;
+    cursor: pointer;
+    color: white;
+    border-top: 1px solid white;
+    border-bottom:1px solid white;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+#btnid{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #ff105f,#ffad06);
+    border-radius:30px;
+    transition:  .5s;
+}
+.input-grouprating{
+    top: 180px;
+    position: absolute;
+    width: 280px;
+    transition:  .5s;
+}
+
+.rating{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 1px solid #999;
+    outline:none;
+    background: transparent;
+}
+
+#bestscoreid{
+    left: 40px;
+    background: grey;
+}
+#totalscoreid{
+    left: -400px;
+    background: green;
+}
+
+#levelid{
+    left: -400px;
+    background: red;
+}
+

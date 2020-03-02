@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="raiting.css">
+</head>
+<body>
+     <div class="ratingback">
+         <div class="button-box">
+             <div id="btnid"></div>
+             <button type="button" class="changebtn" onclick="bestscoreshow()">BestScore</button>
+             <button type="button" class="changebtn" onclick="totalscoreshow()">Totalscore</button>
+             <button type="button" class="changebtn" onclick="levelshow()">Level</button>
+             <div class="input-grouprating" id="bestscoreid">
+                <ul>
+                    <li class="1item rating">1 yer</li>
+                    <li class="2item rating">2 yer</li>
+                    <li class="3item rating">3 yer</li>
+                    <li class="4item rating">4 yer</li>
+                    <li class="5item rating">5 yer</li>
+                    <li class="6item rating">6 yer</li>
+                    <li class="7item rating">7 yer</li>
+                    <li class="8item rating">8 yer</li>
+                    <li class="9item rating">9 yer</li>
+                    <li class="10item rating">10 yer</li>
+                </ul>
+            </div>
+            <div class="input-grouprating" id="totalscoreid">
+               <ul>
+                   <li class="1item rating">1 yeree</li>
+                   <li class="2item rating">2 yeree</li>
+                   <li class="3item rating">3 yeeeer</li>
+                   <li class="4item rating">4 yeeeeer</li>
+                   <li class="5item rating">5 yer</li>
+                   <li class="6item rating">6 yeeeeer</li>
+                   <li class="7item rating">7 yer</li>
+                   <li class="8item rating">8 yeer</li>
+                   <li class="9item rating">9 yer</li>
+                   <li class="10item rating">10 yer</li>
+               </ul>
+           </div>
+           <div class="input-grouprating" id="levelid">
+            <ul>
+                <li class="1item rating">1 yeree</li>
+                <li class="2item rating">2 yeree</li>
+                <li class="3item rating">3 yeeeer</li>
+                <li class="4item rating">4 yeeeeer</li>
+                <li class="5item rating">5 yer</li>
+                <li class="6item rating">6 yeeeeer</li>
+                <li class="7item rating">7 yer</li>
+                <li class="8item rating">8 yeer</li>
+                <li class="9item rating">9 yer</li>
+                <li class="10item rating">10 yer</li>
+            </ul>
+        </div>
+         </div>
+
+     </div>
+     <script>
+         var x = document.getElementById("levelid")
+         var y = document.getElementById("bestscoreid")
+         var q = document.getElementById("totalscoreid")
+         var z = document.getElementById("btnid")
+
+         function bestscoreshow(){
+             x.style.left= "-400px"
+             y.style.left = "50px"
+             q.style.left = "-400px"
+             z.style.left = "0px"
+         }
+         function totalscoreshow(){
+             x.style.left= "-400px"
+             y.style.left = "-360px"
+             z.style.left = "130px"
+             q.style.left = "0px"
+         }
+         function levelshow(){
+             x.style.left= "50px"
+             y.style.left = "-400px"
+             z.style.left = "240px"
+             q.style.left = "-400px"
+         }
+     </script>
+</body>
+</html>

@@ -46,6 +46,7 @@ $(document).ready(function() {
     var newscore
     var totalscore
     var level
+    var leveltimeprice
 
     function gameLogin() {
         var username = $('#username_log').val()
@@ -125,6 +126,16 @@ $(document).ready(function() {
         gameRegister()
     })
 
+
+//     var scoresRef = firebase.database().ref("rating").orderByChild('bestscore').limitToLast(5);
+//     scoresRef.on("child_added", function(snapshot) {
+//       snapshot.forEach(function(data) {
+// console.log(data.val())
+
+//       });
+//     });
+
+    //reytinge qederki datani almaq
     function allrating() {
         var ratingscore = firebase.database().ref('/rating')
         ratingscore.on('value', function(res) {
@@ -204,7 +215,6 @@ $(document).ready(function() {
                         window.location.href = 'index.html'
                     })
             })
-            console.log(current_user)
             var details = database.ref().child("users/" + current_user);
             details.on('value', function(snapshot) {
                 snapshot.forEach(function(item) {
@@ -265,110 +275,221 @@ $(document).ready(function() {
 
                 function faiz() {
 
-                    if (totalscore + xal >= -1 && totalscore + xal < 10) {
+                    if (totalscore + xal >= -1 && totalscore + xal < 25) {
                         level = 0;
-                        kecid = 10
-                        console.log('salam')
-                        faizcubugu = ((totalscore + xal) / 10) * 100;
-                        $('#bar2').text(faizcubugu)
-
-                        $('#level').text(`Level:  ${level}`)
-                        $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
-                    }
-                    if (totalscore + xal >= 10 && totalscore + xal < 25) {
-                        level = 1;
-                        console.log('sagol')
-
                         kecid = 25
                         faizcubugu = ((totalscore + xal) / 25) * 100;
                         $('#bar2').text(faizcubugu)
-                        console.log('level1')
                         $('#level').text(`Level:  ${level}`)
                         $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
                     }
-                    if (totalscore + xal >= 25 && totalscore + xal < 75) {
-                        console.log('level12')
-
+                    if (totalscore + xal >= 25 && totalscore + xal < 50) {
+                        level = 1;
+                        kecid = 50
+                        faizcubugu = ((totalscore + xal) / 50) * 100;
+                        $('#bar2').text(faizcubugu)
+                        $('#level').text(`Level:  ${level}`)
+                        $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
+                    }
+                    if (totalscore + xal >= 50 && totalscore + xal < 80) {
                         level = 2;
-                        kecid = 75
-                        faizcubugu = ((totalscore + xal) / 75) * 100;
+                        kecid = 80
+                        faizcubugu = ((totalscore + xal) / 80) * 100;
                         $('#bar2').text(faizcubugu)
                         $('#level').text(`Level:  ${level}`)
                         $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
 
                     }
-                    if (totalscore + xal >= 75 && totalscore + xal < 150) {
+                    if (totalscore + xal >= 80 && totalscore + xal < 100) {
                         level = 3;
+                        kecid = 100
+                        faizcubugu = ((totalscore + xal) / 100) * 100;
+                        $('#bar2').text(faizcubugu)
+                        $('#level').text(`Level:  ${level}`)
+                        $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
+                    }
+                    if (totalscore + xal >= 100 && totalscore + xal < 150) {
                         kecid = 150
-                        faizcubugu = ((totalscore + xal) / 150) * 100;
-                        $('#bar2').text(faizcubugu)
-                        $('#level').text(`Level:  ${level}`)
-                        $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
-                    }
-                    if (totalscore + xal >= 150 && totalscore + xal < 500) {
-                        console.log('salam')
-                        kecid = 500
                         level = 4;
-                        faizcubugu = ((totalscore + xal) / 500) * 100;
-                        console.log(faizcubugu)
+                        faizcubugu = ((totalscore + xal) / kecid) * 100;
                         $('#bar2').text(faizcubugu)
                         $('#level').text(`Level:  ${level}`)
                         $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
                     }
-
-
-
-
-
+                    if (totalscore + xal >= 150 && totalscore + xal < 250) {
+                        kecid = 250
+                        level = 5;
+                        faizcubugu = ((totalscore + xal) / kecid) * 100;
+                        $('#bar2').text(faizcubugu)
+                        $('#level').text(`Level:  ${level}`)
+                        $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
+                    }
+                    if (totalscore + xal >= 250 && totalscore + xal < 500) {
+                        kecid = 500
+                        level = 6;
+                        faizcubugu = ((totalscore + xal) / kecid) * 100;
+                        $('#bar2').text(faizcubugu)
+                        $('#level').text(`Level:  ${level}`)
+                        $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
+                    }
+                    if (totalscore + xal >= 500 && totalscore + xal < 800) {
+                        kecid = 800
+                        level = 7;
+                        faizcubugu = ((totalscore + xal) / kecid) * 100;
+                        $('#bar2').text(faizcubugu)
+                        $('#level').text(`Level:  ${level}`)
+                        $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
+                    }
+                    if (totalscore + xal >= 800 && totalscore + xal < 1200) {
+                        kecid = 1200
+                        level = 8;
+                        faizcubugu = ((totalscore + xal) / kecid) * 100;
+                        $('#bar2').text(faizcubugu)
+                        $('#level').text(`Level:  ${level}`)
+                        $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
+                    }
+                    if (totalscore + xal >= 1200 && totalscore + xal < 1700) {
+                        kecid = 1700
+                        level = 9;
+                        faizcubugu = ((totalscore + xal) / kecid) * 100;
+                        $('#bar2').text(faizcubugu)
+                        $('#level').text(`Level:  ${level}`)
+                        $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
+                    }
+                    if (totalscore + xal >= 1700 && totalscore + xal < 2500) {
+                        kecid = 2500
+                        level = 10;
+                        faizcubugu = ((totalscore + xal) / kecid) * 100;
+                        $('#bar2').text(faizcubugu)
+                        $('#level').text(`Level:  ${level}`)
+                        $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
+                    }
+                    if (totalscore + xal >= 2500 && totalscore + xal < 5000) {
+                        kecid = 5000
+                        level = 11;
+                        faizcubugu = ((totalscore + xal) / kecid) * 100;
+                        $('#bar2').text(faizcubugu)
+                        $('#level').text(`Level:  ${level}`)
+                        $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
+                    }
+                    if (totalscore + xal >= 5000 && totalscore + xal < 10000) {
+                        kecid = 10000
+                        level = 12;
+                        faizcubugu = ((totalscore + xal) / kecid) * 100;
+                        $('#bar2').text(faizcubugu)
+                        $('#level').text(`Level:  ${level}`)
+                        $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
+                    }
+                    if (totalscore + xal >= 10000 && totalscore + xal < 25000) {
+                        kecid = 25000
+                        level = 13;
+                        faizcubugu = ((totalscore + xal) / kecid) * 100;
+                        $('#bar2').text(faizcubugu)
+                        $('#level').text(`Level:  ${level}`)
+                        $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
+                    }
+                    if (totalscore + xal >= 25000 && totalscore + xal < 50000) {
+                        kecid = 50000
+                        level = 14;
+                        faizcubugu = ((totalscore + xal) / kecid) * 100;
+                        $('#bar2').text(faizcubugu)
+                        $('#level').text(`Level:  ${level}`)
+                        $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
+                    }
+                    if (totalscore + xal >= 50000 && totalscore + xal < 100000) {
+                        kecid = 100000
+                        level = 15;
+                        faizcubugu = ((totalscore + xal) / kecid) * 100;
+                        $('#bar2').text(faizcubugu)
+                        $('#level').text(`Level:  ${level}`)
+                        $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
+                    }
+                    if (totalscore + xal >= 100000 && totalscore + xal < 200000) {
+                        kecid = 200000
+                        level = 16;
+                        faizcubugu = ((totalscore + xal) / kecid) * 100;
+                        $('#bar2').text(faizcubugu)
+                        $('#level').text(`Level:  ${level}`)
+                        $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
+                    }
                     if (faizcubugu >= 100) {
-
-
                         level++
-
-
                     } else {
-
-
                         bar.style.width = parseInt(faizcubugu) + '%';
                         bar.innerHTML = parseInt(faizcubugu) + '%';
-
                     }
-
-
-
                 }
-
-
                 faiz()
-
                 function ratingsystem() {
-                    if (totalscore + xal > 10) {
-                        level = 1
+                    if (totalscore + xal < 25) {
+                        level = 0
+                        leveltimeprice = 1
                     }
                     if (totalscore + xal > 25) {
-                        level = 2
+                        level = 1
+                        leveltimeprice = 2
                     }
-                    if (totalscore + xal > 75) {
+                    if (totalscore + xal > 50) {
+                        level = 2
+                        leveltimeprice = 3
+                    }
+                    if (totalscore + xal > 80) {
                         level = 3
+                        leveltimeprice = 4
+                    }
+                    if (totalscore + xal > 100) {
+                        level = 4
+                        leveltimeprice = 5
                     }
                     if (totalscore + xal > 150) {
-                        level = 4
+                        level = 5
+                        leveltimeprice = 6
+                    }
+                    if (totalscore + xal > 250) {
+                        level = 6
+                        leveltimeprice = 8
                     }
                     if (totalscore + xal > 500) {
-                        level = 5
-                    }
-                    if (totalscore + xal > 1000) {
-                        level = 6
-                    }
-                    if (totalscore + xal > 2000) {
                         level = 7
+                        leveltimeprice = 10
+                    }
+                    if (totalscore + xal > 800) {
+                        level = 8
+                        leveltimeprice = 12
+                    }
+                    if (totalscore + xal > 1200) {
+                        level = 9
+                        leveltimeprice = 15
+                    }
+                    if (totalscore + xal > 1700) {
+                        level = 10
+                        leveltimeprice = 18
+                    }
+                    if (totalscore + xal > 2500) {
+                        level = 11
+                        leveltimeprice = 20
                     }
                     if (totalscore + xal > 5000) {
-                        level = 8
+                        level = 12
+                        leveltimeprice = 25
                     }
                     if (totalscore + xal > 10000) {
-                        level = 9
+                        level = 13
+                        leveltimeprice = 30
                     }
+                    if (totalscore + xal > 25000) {
+                        level = 14
+                        leveltimeprice = 40
+                    }
+                    if (totalscore + xal > 50000) {
+                        level = 15
+                        leveltimeprice = 50
+                    }
+                    if (totalscore + xal > 100000) {
+                        level = 16
+                        leveltimeprice = 100
+                    }
+
                 }
 
                 ratingsystem()
@@ -396,7 +517,7 @@ $(document).ready(function() {
 
 
                 $('.melumatlar').css('background', 'url(shekiller/background.png)')
-                count = 6000
+                count = (6000 * leveltimeprice)
                 $('#gameoverimg').hide()
                 $('#gameover').hide()
                 $('.helps').hide()
@@ -496,7 +617,7 @@ $(document).ready(function() {
                         top.addClass(`${balonstatus}`)
                         top.on('click', function() {
                             vaxt.css('color', 'green').css('font-size', '45px')
-                            count = count + 500
+                            count = count + 500 
                             top.hide()
                             xal = xal + 1
                             faiz()

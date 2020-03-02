@@ -6,18 +6,18 @@
 
  function bestscoreshow(){
      a.style.left= "-400px"
-     b.style.left = "50px"
+     b.style.left = "40px"
      c.style.left = "-400px"
      d.style.left = "0px"
  }
  function totalscoreshow(){
      a.style.left= "-400px"
      b.style.left = "-400px"
-     c.style.left = "50px"
-     d.style.left = "150px"
+     c.style.left = "40px"
+     d.style.left = "140px"
  }
  function levelshow(){
-     a.style.left= "50px"
+     a.style.left= "20px"
      b.style.left = "-400px"
      c.style.left = "-400px"
      d.style.left = "260px"
@@ -37,7 +37,7 @@ $(document).ready(function() {
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
       var database = firebase.database();
-      
+      allrating()
       var username;
       var email;
       var bestscore 
@@ -121,7 +121,66 @@ $(document).ready(function() {
       $('#btnregister').on('click', function() {
         gameRegister()
       })
+function allrating(){
+    var ratingscore = firebase.database().ref('/rating')
+ratingscore.on('value', function (res) {
 
+  var data = res.val()
+  Object.keys(data).reverse().map(key => {
+
+    var item = data[key]
+    var ulbestscore = $('#rating_bestscore')
+    var ultotalscore = $('#rating_totalscore')
+    var ullevel = $('#rating_level')
+    var libestscore = $('<li>')
+    var litotalscore = $('<li>')
+    var lilevel = $('<li>')
+    // //scorebest
+    // var scorebest = $('<span>')
+    // scorebest.css('background','red')
+    // scorebest.text(item.bestscore)
+    // //scoretotal
+    // var scoretotal = $('<span>')
+    // scoretotal.css('background','red')
+    // scoretotal.text(item.totalscore)
+    // //scorelevel
+    // var scorelevel = $('<span>')
+    // scorelevel.css('background','red')
+    // scorelevel.text(item.level)
+    // var usernamelevel = $('<span>')
+    // usernamelevel.css('background','green')
+    // scorelevel.text(item.username)
+    // //umumi
+    // libestscore.addClass('rating')
+    // litotalscore.addClass('rating')
+    // lilevel.addClass('rating')
+
+    libestscore.addClass('rating')
+    litotalscore.addClass('rating')
+    lilevel.addClass('rating')
+        libestscore.text(`  (${item.bestscore})  ${item.username.toUpperCase()}`)
+        ulbestscore.append(libestscore)
+        litotalscore.text(` (${item.totalscore})   ${item.username.toUpperCase()}`)
+        ultotalscore.append(litotalscore)
+        lilevel.text(` (${item.level})    ${item.username.toUpperCase()}`)
+        ullevel.append(lilevel)
+    
+    // arr.push({
+    //     bestscore:item.bestscore,
+    //     username:item.username
+    // })
+
+// for(i = 0;i<arr.length;i++){
+//     maxi = arr[0].bestscore
+//     if (maxi > arr[i].bestscore){
+//         maxi = arr[i].bestscore
+//     }
+// }
+    // console.log(maxi)
+
+  })
+})
+}
     firebase.auth().onAuthStateChanged(function(user){
         if(user){
             current_user = user.uid
@@ -151,21 +210,32 @@ $(document).ready(function() {
 })
 var bestscorerating = []
 var siralibestscore
-var rating = database.ref().child("rating/").orderByChild('bestscore').limitToLast(10);
-rating.on('value',function(snapshot){
-    snapshot.forEach(function(item){
-            // console.log(item.val().bestscore,item.val().username,item.val().totalscore,item.val().level)
-            // console.log(`best: ${item.val().bestscore}`)
-            // bestscorerating.push(item.val().bestscore,item.val().username)
-        console.log(item.val())
+var arr = []
+var maxi = 0
+var mini =0
 
-})
-// bestscorerating.sort(function(a, b){return b - a})
-// console.log(bestscorerating)
-// for(var i =0 ;i <=10;i++){
-//     console.log(bestscorerating[i])
-// }
-})
+// var rating = database.ref().child("rating/").limitToLast(10);
+// rating.on('value',function(snapshot){
+//     snapshot.forEach(function(res){
+//             // console.log(item.val().bestscore,item.val().username,item.val().totalscore,item.val().level)
+//             // console.log(`best: ${item.val().bestscore}`)
+//             // bestscorerating.push(item.val().bestscore,item.val().username)
+//             var data = res.val()
+//     Object.keys(data).map(bestscore => {
+
+//       var item = data[bestscore]
+
+//         console.log(item)
+
+//     })
+
+// })
+// // bestscorerating.sort(function(a, b){return b - a})
+// // console.log(bestscorerating)
+// // for(var i =0 ;i <=10;i++){
+// //     console.log(bestscorerating[i])
+// // }
+// })
 
 
           var game = $('#game')
@@ -332,118 +402,117 @@ rating.on('value',function(snapshot){
                   }, 6200);
               }, 500);
           }
-      
           function balonshekilleri() {
-              if (balonrand == 1) {
-                  balon = 'url(/shekiller/balon1.png)'
-                  baloncssWidth = '25px'
-                  balonstatus = 'sadebalon'
-              } else if (balonrand == 2) {
-                  balon = 'url(/shekiller/balon2.png)'
-                  baloncssWidth = '25px'
-                  baloncssHeight = '50px'
-                  balonstatus = 'sadebalon'
-              } else if (balonrand == 3) {
-                  balon = 'url(/shekiller/balon3.png)'
-                  baloncssWidth = '25px'
-                  baloncssHeight = '50px'
-                  balonstatus = 'sadebalon'
-              } else if (balonrand == 4) {
-                  balon = 'url(/shekiller/balon4.png)'
-                  baloncssWidth = '25px'
-                  baloncssHeight = '50px'
-                  balonstatus = 'sadebalon'
-              } else if (balonrand == 5) {
-                  balon = 'url(/shekiller/balon5.png)'
-                  baloncssWidth = '25px'
-                  baloncssHeight = '50px'
-                  balonstatus = 'sadebalon'
-              } else if (balonrand == 6) {
-                  balon = 'url(/shekiller/balon6.png)'
-                  baloncssWidth = '25px'
-                  baloncssHeight = '50px'
-                  balonstatus = 'sadebalon'
-              } else if (balonrand == 7) {
-                  balon = 'url(/shekiller/newbalon1.png)'
-                  baloncssWidth = '35px'
-                  baloncssHeight = '45px'
-                  balonstatus = 'sadebalon'
-              } else if (balonrand == 8) {
-                  balon = 'url(/shekiller/newbalon2.png)'
-                  baloncssWidth = '35px'
-                  baloncssHeight = '45px'
-                  balonstatus = 'sadebalon'
-              } else if (balonrand == 9) {
-                  balon = 'url(/shekiller/newbalon3.png)'
-                  baloncssWidth = '35px'
-                  baloncssHeight = '45px'
-                  balonstatus = 'sadebalon'
-              } else if (balonrand == 10) {
-                  balon = 'url(/shekiller/newbalon4.png)'
-                  baloncssWidth = '35px'
-                  baloncssHeight = '45px'
-                  balonstatus = 'sadebalon'
-              } else if (balonrand == 11) {
-                  balon = 'url(/shekiller/newbalon5.png)'
-                  baloncssWidth = '35px'
-                  baloncssHeight = '45px'
-                  balonstatus = 'sadebalon'
-              } else if (balonrand == 12) {
-                  balon = 'url(/shekiller/newbalon6.png)'
-                  baloncssWidth = '35px'
-                  baloncssHeight = '45px'
-                  balonstatus = 'sadebalon'
-              } else if (balonrand == 13) {
-                  balon = 'url(/shekiller/newbalon7.png)'
-                  baloncssWidth = '35px'
-                  baloncssHeight = '45px'
-                  balonstatus = 'sadebalon'
-              } else if (balonrand == 14) {
-                  balon = 'url(/shekiller/newbalon8.png)'
-                  baloncssWidth = '35px'
-                  baloncssHeight = '45px'
-                  balonstatus = 'sadebalon'
-              }
-              if (balonrand == 15) {
-                  balon = 'url(/shekiller/bonusbalon1.png)'
-                  baloncssWidth = '40px'
-                  baloncssHeight = '40px'
-                  balonstatus = 'bonusballoon'
-              }
-              if (balonrand == 16) {
-                  balon = 'url(/shekiller/bonusbalon2.png)'
-                  baloncssWidth = '40px'
-                  baloncssHeight = '40px'
-                  balonstatus = 'bonusballoon'    
-              }
-              if (balonrand == 17) {
-                  balon = 'url(/shekiller/bonusbalon3.png)'
-                  baloncssWidth = '40px'
-                  baloncssHeight = '40px'
-                  balonstatus = 'bonusballoon'
-      
-              }
-              if (balonrand == 18) {
-                  balon = 'url(/shekiller/bonusbalon4.png)'
-                  baloncssWidth = '40px'
-                  baloncssHeight = '40px'
-                  balonstatus = 'bonusballoon '
-      
-              }
-              if (balonrand == 19) {
-                  balon = 'url(/shekiller/bonusbalon5.png)'
-                  baloncssWidth = '40px'
-                  baloncssHeight = '40px'
-                  balonstatus = 'bonusballoon'
-      
-              }
-              if (balonrand == 20) {
-                  balon = 'url(/shekiller/bonusbalon6.png)'
-                  baloncssWidth = '40px'
-                  baloncssHeight = '40px'
-                  balonstatus = 'bonusballoon'
-              }
-          }
+            if (balonrand == 1) {
+                balon = 'url(/shekiller/balon1.png)'
+                baloncssWidth = '25px'
+                balonstatus = 'sadebalon'
+            } else if (balonrand == 2) {
+                balon = 'url(/shekiller/balon2.png)'
+                baloncssWidth = '25px'
+                baloncssHeight = '50px'
+                balonstatus = 'sadebalon'
+            } else if (balonrand == 3) {
+                balon = 'url(/shekiller/balon3.png)'
+                baloncssWidth = '25px'
+                baloncssHeight = '50px'
+                balonstatus = 'sadebalon'
+            } else if (balonrand == 4) {
+                balon = 'url(/shekiller/balon4.png)'
+                baloncssWidth = '25px'
+                baloncssHeight = '50px'
+                balonstatus = 'sadebalon'
+            } else if (balonrand == 5) {
+                balon = 'url(/shekiller/balon5.png)'
+                baloncssWidth = '25px'
+                baloncssHeight = '50px'
+                balonstatus = 'sadebalon'
+            } else if (balonrand == 6) {
+                balon = 'url(/shekiller/balon6.png)'
+                baloncssWidth = '25px'
+                baloncssHeight = '50px'
+                balonstatus = 'sadebalon'
+            } else if (balonrand == 7) {
+                balon = 'url(/shekiller/newbalon1.png)'
+                baloncssWidth = '35px'
+                baloncssHeight = '45px'
+                balonstatus = 'sadebalon'
+            } else if (balonrand == 8) {
+                balon = 'url(/shekiller/newbalon2.png)'
+                baloncssWidth = '35px'
+                baloncssHeight = '45px'
+                balonstatus = 'sadebalon'
+            } else if (balonrand == 9) {
+                balon = 'url(/shekiller/newbalon3.png)'
+                baloncssWidth = '35px'
+                baloncssHeight = '45px'
+                balonstatus = 'sadebalon'
+            } else if (balonrand == 10) {
+                balon = 'url(/shekiller/newbalon4.png)'
+                baloncssWidth = '35px'
+                baloncssHeight = '45px'
+                balonstatus = 'sadebalon'
+            } else if (balonrand == 11) {
+                balon = 'url(/shekiller/newbalon5.png)'
+                baloncssWidth = '35px'
+                baloncssHeight = '45px'
+                balonstatus = 'sadebalon'
+            } else if (balonrand == 12) {
+                balon = 'url(/shekiller/newbalon6.png)'
+                baloncssWidth = '35px'
+                baloncssHeight = '45px'
+                balonstatus = 'sadebalon'
+            } else if (balonrand == 13) {
+                balon = 'url(/shekiller/newbalon7.png)'
+                baloncssWidth = '35px'
+                baloncssHeight = '45px'
+                balonstatus = 'sadebalon'
+            } else if (balonrand == 14) {
+                balon = 'url(/shekiller/newbalon8.png)'
+                baloncssWidth = '35px'
+                baloncssHeight = '45px'
+                balonstatus = 'sadebalon'
+            }
+            if (balonrand == 15) {
+                balon = 'url(/shekiller/bonusbalon1.png)'
+                baloncssWidth = '40px'
+                baloncssHeight = '40px'
+                balonstatus = 'bonusballoon'
+            }
+            if (balonrand == 16) {
+                balon = 'url(/shekiller/bonusbalon2.png)'
+                baloncssWidth = '40px'
+                baloncssHeight = '40px'
+                balonstatus = 'bonusballoon'    
+            }
+            if (balonrand == 17) {
+                balon = 'url(/shekiller/bonusbalon3.png)'
+                baloncssWidth = '40px'
+                baloncssHeight = '40px'
+                balonstatus = 'bonusballoon'
+    
+            }
+            if (balonrand == 18) {
+                balon = 'url(/shekiller/bonusbalon4.png)'
+                baloncssWidth = '40px'
+                baloncssHeight = '40px'
+                balonstatus = 'bonusballoon '
+    
+            }
+            if (balonrand == 19) {
+                balon = 'url(/shekiller/bonusbalon5.png)'
+                baloncssWidth = '40px'
+                baloncssHeight = '40px'
+                balonstatus = 'bonusballoon'
+    
+            }
+            if (balonrand == 20) {
+                balon = 'url(/shekiller/bonusbalon6.png)'
+                baloncssWidth = '40px'
+                baloncssHeight = '40px'
+                balonstatus = 'bonusballoon'
+            }
+        }
           $('#gamestart').on('click', function() {
               $('.basla').show()
               $('#level').text(`Level:  ${level}`)
@@ -491,9 +560,9 @@ rating.on('value',function(snapshot){
     }
         else{
             username = 'Qonaq'
-            bestscore = ' (Funksiya Passivdir)'
+            bestscore = ' (Qeydiyyatdan Kecin)'
             newscore = ' (Funksiya Passivdir)'
-            totalscore = ' (Funksiya Passivdir)'
+            totalscore = ' (Qeydiyyatdan Kecin)'
             level = ' (Funksiya Passivdir)'
             $('#dovshan').css('height', '200px').css('width', '150px')  
         var game = $('#game')
@@ -509,7 +578,6 @@ rating.on('value',function(snapshot){
             count = 6000
             $('#gameoverimg').hide()
             $('#gameover').hide()
-            $('.helps').hide()
             $('.helps').hide()
             $('#haqqindashow').hide()
             $('#qeydiyyatshow').hide()
@@ -552,12 +620,12 @@ rating.on('value',function(snapshot){
                 game.append('<img class="animated bounceInDown delay-0.6s" id="gameoverimg" src="shekiller/gameover.png" width="300" height="250"/>')
                 $('#gameover').show()
                 $('.helps').addClass('animated bounceInUp delay-0.5s')
-                $('.helps').show()
+                $('.helps').hide()
                 $('.helps').css('left', '250px')
                 $('.helps').css('top', '350px')
                 $('#gamestart').hide()
                 $('#giris').text('Tekrar Oyna')
-                $('#qeydiyyat').show()
+                $('#qeydiyyat').hide()
                 $('#haqqinda').hide()
                 setInterval(() => {
                     window.location.href = 'index.html'
@@ -759,8 +827,6 @@ rating.on('value',function(snapshot){
             $('.basla').hide()
             $('#qeydiyyatshow').show()
         })
-
-            console.log('sagol')
         }
     })
 

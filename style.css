@@ -3,15 +3,23 @@
     position: absolute;
     left: 10px !important;
 }
+
 .noselect {
-    -webkit-touch-callout: none; /* iOS Safari */
-      -webkit-user-select: none; /* Safari */
-       -khtml-user-select: none; /* Konqueror HTML */
-         -moz-user-select: none; /* Old versions of Firefox */
-          -ms-user-select: none; /* Internet Explorer/Edge */
-              user-select: none; /* Non-prefixed version, currently
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
                                     supported by Chrome, Opera and Firefox */
-  }
+}
+
 .toplar {
     z-index: 2;
     height: 40px;
@@ -20,26 +28,29 @@
     transform: translateY(-100px);
     /* transition: 0s color; */
 }
-#firstgamer{
+
+#firstgamer {
     position: relative;
     bottom: 286px;
     left: 100px;
     font-size: 20px;
 }
-#firstgamerpoint{
+
+#firstgamerpoint {
     position: relative;
     bottom: 301px;
     left: 125px;
     font-size: 40px;
 }
 
-#threegamer{
+#threegamer {
     bottom: 180px !important;
     color: rgb(138, 9, 9);
     position: relative;
     left: 56px;
 }
-#threegamerpoint{
+
+#threegamerpoint {
     bottom: 181px !important;
     color: white;
     position: relative;
@@ -47,21 +58,23 @@
     font-size: 24px;
 }
 
-#secondgamer{
+#secondgamer {
     font-size: 14px;
     color: rgb(20, 221, 111);
     position: relative;
     bottom: 185px;
     left: 50px;
 }
-#secondgamerpoint{
+
+#secondgamerpoint {
     position: relative;
     bottom: 188px;
     color: white;
     left: 65px;
     font-size: 25px;
 }
-#ikinciyer{
+
+#ikinciyer {
     position: relative;
     bottom: 110px;
     right: 10px;
@@ -204,7 +217,6 @@
     position: relative;
 }
 
-
 .melumatlar {
     height: 600px;
     width: 100%;
@@ -345,9 +357,11 @@ body {
     box-shadow: 0 0 20px #ff6224b0;
     border-radius: 30px;
 }
+
 li {
-    font-size:14px !important;
+    font-size: 14px !important;
 }
+
 .gruoprating {
     color: white;
     top: 55px;
@@ -390,18 +404,20 @@ li {
     top: -130px;
 }
 
+
 /* reytingsistemi */
+
 .esas {
     /* padding: 30px; */
     z-index: -5;
 }
-.ratingback{
+
+.ratingback {
     position: absolute;
-    top:0px;
+    top: 0px;
 }
 
-
-.button-boxid{
+.button-boxid {
     bottom: 26px;
     width: 370px;
     margin: 35px auto;
@@ -410,37 +426,38 @@ li {
     border-radius: 30px;
 }
 
-.changebtn{
+.changebtn {
+    width: 100px;
     padding: 10px 30px;
     cursor: pointer;
     color: black;
     border-top: 1px solid white;
-    border-bottom:1px solid white;
+    border-bottom: 1px solid white;
     background: transparent;
     border: 0;
-    outline:none !important;
+    outline: none !important;
     position: relative;
-     
 }
-#btnid{
+
+#btnid {
     top: 0;
     left: 0;
     position: absolute;
     width: 110px;
     height: 100%;
-    background: linear-gradient(to right, #ff105f,#ffad06);
-    border-radius:30px;
-    transition:  .5s;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    border-radius: 30px;
+    transition: .5s;
 }
 
-.input-grouprating{
+.input-grouprating {
     top: 180px;
     position: absolute;
     width: 280px;
-    transition:  .5s;
+    transition: .5s;
 }
 
-.rating{
+.rating {
     width: 100%;
     padding: 10px 0;
     margin: 5px 0;
@@ -448,18 +465,19 @@ li {
     border-right: 0;
     border-top: 0;
     border-bottom: 1px solid #999;
-    outline:none;
+    outline: none;
     background: transparent;
 }
 
-#bestscoreid{
-    top: 200px;
+#bestscoreid {
+    top: 210px;
     max-width: 200px;
-    left: 40px;
+    left: 50px;
     color: black;
     /* background: linear-gradient(to right, #1c77ee, #030113); */
 }
-#totalscoreid{
+
+#totalscoreid {
     top: 200px;
     max-width: 200px;
     left: -400px;
@@ -467,11 +485,10 @@ li {
     /* background: linear-gradient(to right, #c4f318f5, #030113c2); */
 }
 
-#levelid{
+#levelid {
     top: 200px;
     max-width: 200px;
     left: -400px;
     color: black;
     /* background: linear-gradient(to right, #ee1c2e, #030113); */
 }
-

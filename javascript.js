@@ -2,6 +2,7 @@ var a = document.getElementById("levelid")
 var b = document.getElementById("bestscoreid")
 var c = document.getElementById("totalscoreid")
 var d = document.getElementById("btnid")
+var bar = document.getElementById("bar2");
 
 function bestscoreshow() {
     a.style.left = "-400px"
@@ -264,17 +265,19 @@ $(document).ready(function() {
 
                 function faiz() {
 
-
-                    if (totalscore + xal >= 0 && totalscore + xal < 10) {
+                    if (totalscore + xal >= -1 && totalscore + xal < 10) {
                         level = 0;
                         kecid = 10
+                        console.log('salam')
                         faizcubugu = ((totalscore + xal) / 10) * 100;
                         $('#bar2').text(faizcubugu)
-                        $('#level').text(`Level:  ${level}`)
+                        $('#level').prepend(`Level:  ${level}`)
                         $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
                     }
                     if (totalscore + xal >= 10 && totalscore + xal < 25) {
                         level = 1;
+                        console.log('sagol')
+
                         kecid = 25
                         faizcubugu = ((totalscore + xal) / 25) * 100;
                         $('#bar2').text(faizcubugu)
@@ -312,7 +315,7 @@ $(document).ready(function() {
                         $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
                     }
 
-                    var bar = document.getElementById("bar2");
+
 
 
 
@@ -634,21 +637,20 @@ $(document).ready(function() {
             }
             $('#gamestart').on('click', function() {
                 $('.basla').show()
-                var leveldiv = $('#level')
+                    // var leveldiv = $('#level')
 
-                var bar = $('#bar')
-                var bar2 = $('#bar2')
-                var kecid = $('#kecid')
+                // var bar = $('#bar')
+                // var bar2 = $('#bar2')
+                // var kecid = $('#kecid')
 
-                $('#level').text(`Level:  ${level}`)
+                // $('#level').text(`Level:  ${level}`)
 
-                bar.append(bar2)
-                leveldiv.append(bar)
-                leveldiv.append(kecid)
+                // bar.append(bar2)
+                // leveldiv.append(bar)
+                // leveldiv.append(kecid)
                 $('#best_score').text(`Best Score:  ${bestscore}`)
                 $('#new_score').text(`Sonuncu Oyun Scoru:  ${newscore}`)
                 $('#total_score').text(`Umumi Toplanan Yumurtalar:  ${totalscore}`)
-
                 $('#usernames').text(`username:  ${username.toUpperCase()}`)
                 $('.esas').hide()
                 $('.helps').hide()

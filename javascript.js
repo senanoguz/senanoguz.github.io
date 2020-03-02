@@ -264,14 +264,15 @@ $(document).ready(function() {
                 var kecid
 
                 function faiz() {
-                    $('#level').empty()
+
                     if (totalscore + xal >= -1 && totalscore + xal < 10) {
                         level = 0;
                         kecid = 10
                         console.log('salam')
                         faizcubugu = ((totalscore + xal) / 10) * 100;
                         $('#bar2').text(faizcubugu)
-                        $('#level').prepend(`Level:  ${level}`)
+
+                        $('#level').text(`Level:  ${level}`)
                         $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
                     }
                     if (totalscore + xal >= 10 && totalscore + xal < 25) {

@@ -58,3 +58,21 @@
 .swiper-slide:nth-child(5) .sliderText{
     background: linear-gradient(to right, #020e13, #ed2f2f)
 }
+
+/* bar */
+#bar {
+		
+    width:100%;
+    background: #ddd;
+    
+}
+
+#bar2 {
+    
+    width: 10%;
+    background: #4cfa50;
+    height:30px;
+    text-align:center;
+    line-height:30px;
+    
+}

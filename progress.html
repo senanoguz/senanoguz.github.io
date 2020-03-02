@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css"> 
+	
+
+	
+	</style>
+</head>
+<body>
+	
+	 <div id="bar"> 
+	 
+	 <div id="bar2">10%</div>
+	 
+	 </div>
+	 <br />
+	 
+	 
+	 <script type="text/javascript"> 
+	 
+	 function test() {
+		 
+		 var bar = document.getElementById("bar2");
+		 
+		 var sayi = 10;
+		 
+		 var id = setInterval(function(){
+			 
+			 if(sayi >= 100){
+				 
+				 
+				 clearInterval(id);
+				 
+				 
+			 }else {
+				 
+				 sayi++;
+                 
+                bar.style.width = sayi + '%';				 
+				bar.innerHTML = sayi + '%';
+				 
+			 }
+			 		 
+			 
+		 },1000);
+		 
+		 
+     }
+	 test()
+	 </script>
+	 
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

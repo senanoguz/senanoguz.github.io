@@ -124,17 +124,30 @@ $(document).ready(function() {
 function allrating(){
     var ratingscore = firebase.database().ref('/rating')
 ratingscore.on('value', function (res) {
-
-  var data = res.val()
-  Object.keys(data).reverse().map(key => {
-
-    var item = data[key]
     var ulbestscore = $('#rating_bestscore')
     var ultotalscore = $('#rating_totalscore')
     var ullevel = $('#rating_level')
+    ulbestscore.empty()
+    ultotalscore.empty()
+    ullevel.empty()
+    // libestscore.empty()
+    // litotalscore.empty()
+    // lilevel.empty()
+  var data = res.val()
+  Object.keys(data).reverse().map(key => {
     var libestscore = $('<li>')
     var litotalscore = $('<li>')
     var lilevel = $('<li>')
+    var item = data[key]
+    libestscore.addClass('rating')
+    litotalscore.addClass('rating')
+    lilevel.addClass('rating')
+        libestscore.text(`  (${item.bestscore})  ${item.username.toUpperCase()}`)
+        ulbestscore.append(libestscore)
+        litotalscore.text(` (${item.totalscore})   ${item.username.toUpperCase()}`)
+        ultotalscore.append(litotalscore)
+        lilevel.text(` (${item.level})    ${item.username.toUpperCase()}`)
+        ullevel.append(lilevel)
     // //scorebest
     // var scorebest = $('<span>')
     // scorebest.css('background','red')
@@ -155,15 +168,6 @@ ratingscore.on('value', function (res) {
     // litotalscore.addClass('rating')
     // lilevel.addClass('rating')
 
-    libestscore.addClass('rating')
-    litotalscore.addClass('rating')
-    lilevel.addClass('rating')
-        libestscore.text(`  (${item.bestscore})  ${item.username.toUpperCase()}`)
-        ulbestscore.append(libestscore)
-        litotalscore.text(` (${item.totalscore})   ${item.username.toUpperCase()}`)
-        ultotalscore.append(litotalscore)
-        lilevel.text(` (${item.level})    ${item.username.toUpperCase()}`)
-        ullevel.append(lilevel)
     
     // arr.push({
     //     bestscore:item.bestscore,
@@ -208,11 +212,12 @@ ratingscore.on('value', function (res) {
                 level = item.val().level
     }) 
 })
-var bestscorerating = []
-var siralibestscore
-var arr = []
-var maxi = 0
-var mini =0
+
+// var bestscorerating = []
+// var siralibestscore
+// var arr = []
+// var maxi = 0
+// var mini =0
 
 // var rating = database.ref().child("rating/").limitToLast(10);
 // rating.on('value',function(snapshot){
@@ -248,6 +253,132 @@ var mini =0
           var baloncssHeight
           var bosalt
           function userGame() {
+              //faiz
+var faizcubugu
+var kecid
+function faiz() {
+
+
+             if(totalscore + xal >=0 && totalscore+xal < 10){
+                level = 0;
+                kecid = 10
+                faizcubugu =  ((totalscore + xal) / 10) *100;
+                $('#bar2').text(faizcubugu)
+               $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
+             }
+             if(totalscore + xal >=10 && totalscore+xal < 25){
+                level = 1;
+                kecid = 25
+                faizcubugu =  ((totalscore + xal) / 25) *100;
+                $('#bar2').text(faizcubugu)
+               $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
+             }
+             if(totalscore + xal >=25 && totalscore+xal < 75){
+                level = 3;
+                kecid = 75
+                faizcubugu =  ((totalscore + xal) / 75) *100;
+                $('#bar2').text(faizcubugu)
+               $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
+
+             }
+             if(totalscore + xal >=75 && totalscore+xal < 150){
+                level = 4;
+                kecid = 150
+                faizcubugu =  ((totalscore + xal) / 150) *100;
+                $('#bar2').text(faizcubugu)
+                $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
+             }
+             if(totalscore + xal >=150 && totalscore+xal < 500){
+                console.log('salam')
+                kecid = 500
+               level = 4;
+               faizcubugu =  ((totalscore + xal) / 500) *100;
+               console.log(faizcubugu)
+               $('#bar2').text(faizcubugu)
+               $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
+            }
+         
+    var bar = document.getElementById("bar2");
+    
+
+        
+        if(faizcubugu >= 100){
+            
+            
+            level++
+            
+            
+        }else {
+
+            
+           bar.style.width = parseInt(faizcubugu) + '%';				 
+           bar.innerHTML = parseInt(faizcubugu) + '%';
+            
+        }
+                
+    
+    
+}
+
+
+faiz()
+
+function ratingsystem(){
+    if(totalscore+xal > 10){
+        level = 1
+    }
+    if(totalscore+xal > 25){
+        level = 2
+    }
+    if(totalscore+xal > 75){
+      level = 3
+  }
+  if(totalscore+xal > 150){
+      level = 4
+  }
+  if(totalscore+xal > 500){
+      level = 5
+  }
+  if(totalscore+xal > 1000){
+      level = 6
+  }
+  if(totalscore+xal > 2000){
+      level = 7
+  }
+  if(totalscore+xal > 5000){
+      level = 8
+  }
+  if(totalscore+xal > 10000){
+      level = 9
+  }
+}
+
+ratingsystem()
+if (xal > bestscore)
+{
+bestscore = xal;
+}
+else{
+    bestscore = bestscore
+}
+totalscore = totalscore + xal
+  database.ref("users/" + current_user).child("user_details").set({
+      email: email,
+      username : username,
+      bestscore : bestscore,
+      newscore: newscore,
+      totalscore : totalscore,
+      level : level
+})
+database.ref("rating/" + current_user).set({
+  username : username,
+  bestscore : bestscore,
+  totalscore : totalscore,
+  level : level
+  })
+
+
+
             $('.melumatlar').css('background','url(shekiller/background.png)')
               count = 6000
               $('#gameoverimg').hide()
@@ -294,33 +425,7 @@ var mini =0
                 $('#qeydiyyat').hide()
                   console.table(email,username,bestscore,totalscore,level,newscore)
 
-                      if(totalscore+xal > 10){
-                          level = 1
-                      }
-                      if(totalscore+xal > 25){
-                          level = 2
-                      }
-                      if(totalscore+xal > 75){
-                        level = 3
-                    }
-                    if(totalscore+xal > 200){
-                        level = 4
-                    }
-                    if(totalscore+xal > 500){
-                        level = 5
-                    }
-                    if(totalscore+xal > 1000){
-                        level = 6
-                    }
-                    if(totalscore+xal > 2000){
-                        level = 7
-                    }
-                    if(totalscore+xal > 5000){
-                        level = 8
-                    }
-                    if(totalscore+xal > 10000){
-                        level = 9
-                    }
+                ratingsystem()
                       if (xal > bestscore)
                       {
                       bestscore = xal;
@@ -380,6 +485,7 @@ var mini =0
                           count = count + 500
                           top.hide()
                           xal = xal + 1
+                          faiz()
                           xalprint.animate({ opacity: '0.4' }, "slow");
                           xalprint.animate({ opacity: '0.8' }, "slow");
                           xalprint.animate({ opacity: '0.4' }, "slow");
@@ -517,12 +623,22 @@ var mini =0
         }
           $('#gamestart').on('click', function() {
               $('.basla').show()
+              var leveldiv = $('#level') 
+        
+              var bar = $('#bar') 
+              var bar2 = $('#bar2')
+              var kecid = $('#kecid')
+
               $('#level').text(`Level:  ${level}`)
+
+              bar.append(bar2)
+              leveldiv.append(bar)
+              leveldiv.append(kecid)
               $('#best_score').text(`Best Score:  ${bestscore}`)
               $('#new_score').text(`Sonuncu Oyun Scoru:  ${newscore}`)
               $('#total_score').text(`Umumi Toplanan Yumurtalar:  ${totalscore}`)
       
-              $('#usernames').text(`username:  ${username}`)
+              $('#usernames').text(`username:  ${username.toUpperCase()}`)
               $('.esas').hide()
               $('.helps').hide()
               $('#haqqindashow').hide()

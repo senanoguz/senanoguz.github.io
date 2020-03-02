@@ -449,15 +449,15 @@ li {
 
 #bestscoreid{
     left: 40px;
-    background: grey;
+    background: linear-gradient(to right, #1c77ee, #030113);
 }
 #totalscoreid{
     left: -400px;
-    background: green;
+    background: linear-gradient(to right, #c4f318f5, #030113c2);
 }
 
 #levelid{
     left: -400px;
-    background: red;
+    background: linear-gradient(to right, #ee1c2e, #030113);
 }
 

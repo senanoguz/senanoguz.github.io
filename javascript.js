@@ -255,6 +255,7 @@ ratingscore.on('value', function (res) {
           function userGame() {
               //faiz
 var faizcubugu
+//hazirdi
 var kecid
 function faiz() {
 

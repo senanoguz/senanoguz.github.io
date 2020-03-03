@@ -25,6 +25,8 @@ function levelshow() {
     d.style.left = "210px"
 }
 
+var bonusBalonRandomXal = 1
+var bonusBalonRandomYumurta = 500
 
 $(document).ready(function() {
     var firebaseConfig = {
@@ -47,7 +49,8 @@ $(document).ready(function() {
     var totalscore
     var level
     var leveltimeprice
-
+    var ballonxal = 1
+    var ballonsaniye = 5
     function gameLogin() {
         var username = $('#username_log').val()
         var password = $('#password_log').val()
@@ -613,7 +616,6 @@ $(document).ready(function() {
                     $('.melumatlar').css('background', 'url(shekiller/tabloranking.png)')
                     $('#gamestart').hide()
                     $('#qeydiyyat').hide()
-                    console.table(email, username, bestscore, totalscore, level, newscore)
 
                     ratingsystem()
                     if (xal > bestscore) {
@@ -661,6 +663,8 @@ $(document).ready(function() {
                         yarat += 1
                         reng = reng + Math.floor(Math.random() * 10);
                         balonrand = 1 + Math.floor(Math.random() * 20);
+                        bonusBalonRandomXal = Math.floor(Math.random() * 6000);
+                        bonusBalonRandomYumurta = Math.floor(Math.random() * 10);
                         balonshekilleri()
                         kordinantY = Math.floor(Math.random() * 690);
                         kordinantX = Math.floor(Math.random() * 690);
@@ -670,9 +674,10 @@ $(document).ready(function() {
                         top.addClass(`${balonstatus}`)
                         top.on('click', function() {
                             vaxt.css('color', 'green').css('font-size', '45px')
-                            count = count + 500 
+                            count = count + ballonsaniye
+                            console.log(ballonsaniye)
                             top.hide()
-                            xal = xal + 1
+                            xal = xal + ballonxal
                             faiz()
                             xalprint.animate({ opacity: '0.4' }, "slow");
                             xalprint.animate({ opacity: '0.8' }, "slow");
@@ -694,7 +699,7 @@ $(document).ready(function() {
                     setInterval(() => {
                         vaxt.css('color', 'red').css('font-size', '40px')
                         top.hide()
-                        count = count - 100
+                        count = count - 50
                     }, 6200);
                 }, 500);
             }
@@ -704,89 +709,123 @@ $(document).ready(function() {
                     balon = 'url(/shekiller/balon1.png)'
                     baloncssWidth = '25px'
                     balonstatus = 'sadebalon'
+                    ballonxal = 1
+                    ballonsaniye = 200
                 } else if (balonrand == 2) {
                     balon = 'url(/shekiller/balon2.png)'
                     baloncssWidth = '25px'
                     baloncssHeight = '50px'
                     balonstatus = 'sadebalon'
+                    ballonxal = 1
+                    ballonsaniye = 500
                 } else if (balonrand == 3) {
                     balon = 'url(/shekiller/balon3.png)'
                     baloncssWidth = '25px'
                     baloncssHeight = '50px'
                     balonstatus = 'sadebalon'
+                    ballonxal = 1
+                    ballonsaniye = 700
                 } else if (balonrand == 4) {
                     balon = 'url(/shekiller/balon4.png)'
                     baloncssWidth = '25px'
                     baloncssHeight = '50px'
                     balonstatus = 'sadebalon'
+                    ballonxal = 1
+                    ballonsaniye = 400
                 } else if (balonrand == 5) {
                     balon = 'url(/shekiller/balon5.png)'
                     baloncssWidth = '25px'
                     baloncssHeight = '50px'
                     balonstatus = 'sadebalon'
+                    ballonxal = 1
+                    ballonsaniye = 500
                 } else if (balonrand == 6) {
                     balon = 'url(/shekiller/balon6.png)'
                     baloncssWidth = '25px'
                     baloncssHeight = '50px'
                     balonstatus = 'sadebalon'
+                    ballonxal = 2
+                    ballonsaniye = 400
                 } else if (balonrand == 7) {
                     balon = 'url(/shekiller/newbalon1.png)'
                     baloncssWidth = '35px'
                     baloncssHeight = '45px'
                     balonstatus = 'sadebalon'
+                    ballonxal = 1
+                    ballonsaniye = 600
                 } else if (balonrand == 8) {
                     balon = 'url(/shekiller/newbalon2.png)'
                     baloncssWidth = '35px'
                     baloncssHeight = '45px'
                     balonstatus = 'sadebalon'
+                    ballonxal = 1
+                    ballonsaniye = 300
                 } else if (balonrand == 9) {
                     balon = 'url(/shekiller/newbalon3.png)'
                     baloncssWidth = '35px'
                     baloncssHeight = '45px'
                     balonstatus = 'sadebalon'
+                    ballonxal = 2
+                    ballonsaniye = 400
                 } else if (balonrand == 10) {
                     balon = 'url(/shekiller/newbalon4.png)'
                     baloncssWidth = '35px'
                     baloncssHeight = '45px'
                     balonstatus = 'sadebalon'
+                    ballonxal = 1
+                    ballonsaniye = 520
                 } else if (balonrand == 11) {
                     balon = 'url(/shekiller/newbalon5.png)'
                     baloncssWidth = '35px'
                     baloncssHeight = '45px'
                     balonstatus = 'sadebalon'
+                    ballonxal = 2
+                    ballonsaniye = 550
                 } else if (balonrand == 12) {
                     balon = 'url(/shekiller/newbalon6.png)'
                     baloncssWidth = '35px'
                     baloncssHeight = '45px'
                     balonstatus = 'sadebalon'
+                    ballonxal = 2
+                    ballonsaniye = 600
                 } else if (balonrand == 13) {
                     balon = 'url(/shekiller/newbalon7.png)'
                     baloncssWidth = '35px'
                     baloncssHeight = '45px'
                     balonstatus = 'sadebalon'
+                    ballonxal = 1
+                    ballonsaniye = 700
                 } else if (balonrand == 14) {
                     balon = 'url(/shekiller/newbalon8.png)'
                     baloncssWidth = '35px'
                     baloncssHeight = '45px'
                     balonstatus = 'sadebalon'
+                    ballonxal = 2
+                    ballonsaniye = 800
                 }
                 if (balonrand == 15) {
                     balon = 'url(/shekiller/bonusbalon1.png)'
                     baloncssWidth = '40px'
                     baloncssHeight = '40px'
                     balonstatus = 'bonusballoon'
+                    ballonxal = 5
+                    ballonsaniye = 1250
                 }
                 if (balonrand == 16) {
                     balon = 'url(/shekiller/bonusbalon2.png)'
                     baloncssWidth = '40px'
                     baloncssHeight = '40px'
                     balonstatus = 'bonusballoon'
+                    ballonxal = 5
+                    ballonsaniye = 1250
                 }
                 if (balonrand == 17) {
                     balon = 'url(/shekiller/bonusbalon3.png)'
                     baloncssWidth = '40px'
                     baloncssHeight = '40px'
                     balonstatus = 'bonusballoon'
+                    ballonxal = 5
+                    ballonsaniye = 1500
 
                 }
                 if (balonrand == 18) {
@@ -794,6 +833,8 @@ $(document).ready(function() {
                     baloncssWidth = '40px'
                     baloncssHeight = '40px'
                     balonstatus = 'bonusballoon '
+                    ballonxal = 4
+                    ballonsaniye = 800
 
                 }
                 if (balonrand == 19) {
@@ -801,6 +842,8 @@ $(document).ready(function() {
                     baloncssWidth = '40px'
                     baloncssHeight = '40px'
                     balonstatus = 'bonusballoon'
+                    ballonxal = bonusBalonRandomYumurta
+                    ballonsaniye = 1200
 
                 }
                 if (balonrand == 20) {
@@ -808,6 +851,8 @@ $(document).ready(function() {
                     baloncssWidth = '40px'
                     baloncssHeight = '40px'
                     balonstatus = 'bonusballoon'
+                    ballonxal = 6
+                    ballonsaniye = bonusBalonRandomXal
                 }
             }
             $('#gamestart').on('click', function() {

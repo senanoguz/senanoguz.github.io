@@ -1,217 +1,96 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 
 <head>
-    <title>MyGame</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="animate.css">
-    <link rel="stylesheet" href="slide.css">
-    <link rel="stylesheet" href="swiper.min.css">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Milyoncu Oyunu</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="asserts/style.css">
+    <script src="asserts/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+
 </head>
 
-<body>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-8">
-                <div id="game">
-                    <span id="gameover" class="animated zoomInUp" style="display: none;">Game Over</span>
-                    <div class="helps">
-                        <button id="gamestart" class="mybutton"><span id="giris">Başla</span></button>
-                        <button id="qeydiyyat" class="mybutton"><span>Giriş</span></button>
-                        <button id="haqqinda" class="mybutton"><span id="haqqinda">Oyun Haqqında</span></button>
-                    </div>
-                    <div id="haqqindashow" style="display: none;">
-                        <img src="shekiller/haqqinda.png" alt="" width="600px" height="600px">
-                        <div class="haqqindaslide">
-                            <div class="swiper-container">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <div class="sliderText">
-                                                <h3>Bayramlıq Yumurtalar</h3>
-                                            </div>
-                                            <div class="content">
-                                                Oyun Başladiqdan sonra yuxarıdan balonlar düşəcək balonların içində yumurtalar var siz bu balonları yerə çatana kimi partlatmağa çalışmalısınız partladılan balonları sizin dovşanınız izləyir və oradan düşən yumurtaları səbətə yığır :) Beleliklə həm səbətinizdəki
-                                                yumurtaların sayı artır hemdə sizə verilən vaxtın üzərinə vaxt elavə edilir. Nə qədər cəld olsanız bir o qədər çox Bayramlıq yumurta yığa bilərsiniz :) Uğurlar
-                                                <br><hr>Sağa çəkib ətraflı qaydalarla tanış ola bilərsiniz
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <div class="sliderText">
-                                                <h3>Əsas Qaydalar</h3>
-                                            </div>
-                                            <div class="content">Oyunu qeydiyyatdan keçib və yaxud Qonaq kimi oynaya bilərsiniz Qeydiyyatlı istifadəçi bir çox funksiyalara sahib olacaq Ancaq sizə biz oyunu yoxlamağınız uçun Qonaq kimi oynamag şansıda veririk</div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <div class="sliderText">
-                                                <h3>Qonaq Qaydaları</h3>
-                                            </div>
-                                            <div class="content">1) Sizin topladığınız yumurtalar Yadda qalmayacaq Yeni oyuna başlayarkən silinəcəkdir
-                                                <div>2) Reytingdə yer almayacağsınız
-                                                </div>
-                                                <div>3) Level səviyyəniz artmayacaq
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <div class="sliderText">
-                                                <h3>Qeydiyyat Qaydaları</h3>
-                                            </div>
-                                            <div class="content">1) Yumurtalarınız hər oyun sonu yaddaşa veriləcəkdir
-                                                <div>2) Sonuncu Oyun nəticələri,Ən Yaxşı nəticəniz və ümumi nəticələrinizi görə biləcəksiniz
-                                                </div>
-                                                <div>3) Level funksiyası aktiv olacaq
-                                                </div>
-                                                <div>4) Ümumi reytingin aktivləşməsi
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+<body class="container noselect">
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="cloud"></div>
-                </div>
-                <div id="xal" style="display: none;"></div>
-                <div class="lovhe" style="display: none;">
-                </div>
-                <div id="vaxt" style="display: none;"></div>
+    <audio src="rounds.mp3" id="my_audio" loop="loop"></audio>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById("my_audio").play();
+        }
+    </script>
+    <div class="row">
+        <div id="dialog-message" title="Auditoriyanın köməyi" style="display: none;">
+            <canvas id="myChart" width="400" height="200"></canvas>
+        </div>
+        <div class="col-md-8">
+            <marquee style="color:white">Salam Sual Cavab oyunumuza xoş gəlmisiniz oyun hal-hazırda <span
+                    style="color:red;background-color:white">Beta 0.5</span> versiyasındadır buna görədə bəzi buglar
+                (problemlər,çatışmamazlıqlar və.s) ola bilər belə hallarla qarşılaşdığınız zaman <span
+                    style="color:red;background-color:white">senanoguz@mail.ru</span> emailimizə yazmağınızı xaiş edirik
+            </marquee>
+            <div class="question col-md-12 slide-in-elliptic-top-fwd">
+
             </div>
-            <div class="col-4">
-                <div class="melumatlar">
-                    <div class="esas">
-                        <div class="alert alert-dark text-dark" style="    right: 5px;">Reyting</div>
-                        <div class="birinciyer">
-                            <img class="animated flash delay-10s" src="shekiller/reyting1.png" alt="" srcset="" width="250px" height="300px" style="margin-left: 20px;">
-                            <div id="firstgamer">user1</div>
-                            <div id="firstgamerpoint">40</div>
-                        </div>
-                        <div class="ikinciyer" style="
-                                position: relative;
-                                bottom: 110px;
-                                right: 10px;
-                            ">
-                            <img class="animated flash delay-10s" src="shekiller/reyting2.png" alt="" srcset="" width="150px" height="200px">
-                            <div id="secondgamer">user2</div>
-                            <div id="secondgamerpoint">40</div>
-                        </div>
-                        <div class="uncuncuyer" style="
-                            position: relative;
-                            bottom: 377px;
-                            left: 149px;
-                        ">
-                            <img class="animated flash delay-10s" src="shekiller/reyting3.png" alt="" srcset="" width="150px" height="200px">
-                            <div id="threegamer">user3</div>
-                            <div id="threegamerpoint">40</div>
-                        </div>
 
+            <div id="countdown">
 
-                    </div>
-                    <div id="qeydiyyatshow" style="display: none;">
-                        <div class="hero">
-                            <div class="form-box">
-                                <div>
-                                    <div class="alert alert-primary">
-                                        <button type="button" class="btn btn-primary" onclick="login()">Login</button>
-                                        <button type="button" class="btn btn-dark" onclick="register()">Register</button>
-                                    </div>
-                                </div>
-                                <div id="login" class="input-group">
-                                    <input type="text" id="username_log" class="input-field" placeholder="User ID">
-                                    <input type="password" id="password_log" class="input-field" placeholder="Enter Password">
-                                    <button type="submit" id="btnlogin" class="submit-btn">Login</button>
-                                    <div id="okay"></div>
-                                </div>
-                                <div id="register" class="input-group">
-                                    <input type="text" id="username" class="input-field" placeholder="User ID">
-                                    <input type="email" id="email" class="input-field" placeholder="Email">
-                                    <input type="password" id="password" class="input-field" placeholder="Enter Password">
-                                    <input type="password" id="password2" class="input-field" placeholder="Enter Again Password">
-                                    <button type="submit" id="btnregister" class="submit-btn">Register</button>
-                                    <div id="tamam"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="basla animated bounce">
-                        <!-- <img src="shekiller/neticetablosu.png" width="270px" height="600px">
-                        <div class="neticeler">
-                            <div>Level:</div>
-                            <div>Best Score:</div>
-                            <div>Sonuncu Oyun Scoru:</div>
-                            <div>Umumi Toplanan Yumurtalar:</div>
-                            <div>username:</div>
-                        </div> -->
-                        <div class="neticeler">
-                            <div class="p-3 mb-2 bg-success text-black" id="level">Level:</div>
-                            <div class="p-3 mb-2 bg-danger text-white" id="best_score">Best Score:</div>
-                            <div class="p-3 mb-2 bg-danger text-white" id="new_score">Sonuncu Oyun Scoru:</div>
-                            <div class="p-3 mb-2 bg-danger text-white" id="total_score">Umumi Toplanan Yumurtalar:</div>
-                            <div class="p-3 mb-2 bg-success text-black" id="usernames"></div>
-                        </div>
-                        <div class="text-center">
-                            <img src="shekiller/sebetlidovsan.png" alt="" srcset="" id="dovshan" width="270px" height="290px">
-                        </div>
-                    </div>
+            </div>
+            <div class="answers col-md-12 slide-in-elliptic-top-fwd">
 
+            </div>
+            <div class="end col-md-12 slide-in-elliptic-top-fwd">
 
-                </div>
+            </div>
+            <div class="end2 col-md-12 slide-in-elliptic-top-fwd">
+
             </div>
         </div>
+
+        <div class="right col-md-4">
+            <div class="info p-3">
+                <button id="phone" type="button"><img src="helps/group.png" alt=""></button>
+                <button id="btn50" type="button"><img src="helps/50-50.png" alt=""></button>
+                <button id="pass" type="button"><img src="helps/pass.png" alt=""></button>
+            </div>
+
+            <div id="pointer">
+
+                <ul id="levels ">
+                    <li class="data15 only15"><img src="dollar.png" width="25px" height="25px">1,000,000</li>
+                    <li class="data14 only15"><img src="dollar.png" width="25px" height="25px">500,000</li>
+                    <li class="data13 only15"><img src="dollar.png" width="25px" height="25px">250,000</li>
+                    <li class="data12 only15"><img src="dollar.png" width="25px" height="25px">125,000</li>
+                    <li class="data11 only15"><img src="dollar.png" width="25px" height="25px">64,000</li>
+                    <li class="data10 only10"><img src="dollar.png" width="25px" height="25px">32,000</li>
+                    <li class="data9 only10"><img src="dollar.png" width="25px" height="25px">16,000</li>
+                    <li class="data8 only10"><img src="dollar.png" width="25px" height="25px">8,000</li>
+                    <li class="data7 only10"><img src="dollar.png" width="25px" height="25px">4,000</li>
+                    <li class="data6 only10"><img src="dollar.png" width="25px" height="25px">2,000</li>
+                    <li class="data5 only5"><img src="dollar.png" width="25px" height="25px">1,000</li>
+                    <li class="data4 only5"><img src="dollar.png" width="25px" height="25px">500</li>
+                    <li class="data3 only5"><img src="dollar.png" width="25px" height="25px">300</li>
+                    <li class="data2 only5"><img src="dollar.png" width="25px" height="25px">200</li>
+                    <li class="data1 only5"><img src="dollar.png" width="25px" height="25px">100</li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+
+        </div>
+        <div style="margin-left:60%;">
+            <span style="color:red;background-color:white">Beta 0.5 version</span>
+        </div>
     </div>
-    <script>
-        var x = document.getElementById('login')
-        var y = document.getElementById('register')
 
-        function register() {
-            x.style.left = "-400px"
-            y.style.left = "10px"
-        }
 
-        function login() {
-            x.style.left = "10px"
-            y.style.left = "-450px"
-        }
-    </script>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="swiper.min.js"></script>
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-            effect: 'coverflow',
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: 'auto',
-            coverflowEffect: {
-                rotate: 50,
-                stretch: 0,
-                depth: 200,
-                modifier: 1,
-                slideShadows: true,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-            },
-        });
-    </script>
-    <script src="javascript.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>

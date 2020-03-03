@@ -675,7 +675,7 @@ $(document).ready(function() {
                         top.on('click', function() {
                             vaxt.css('color', 'green').css('font-size', '45px')
                             count = count + ballonsaniye
-                            console.log(ballonsaniye)
+                            // console.log(ballonsaniye)
                             top.hide()
                             xal = xal + ballonxal
                             faiz()

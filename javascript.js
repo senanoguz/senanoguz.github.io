@@ -152,7 +152,7 @@ $(document).ready(function() {
                 var item = data[key]
                 var litotalscore = $('<li>')
                 litotalscore.addClass('rating')
-                litotalscore.text(` Total: ${item.totalscore}   ${item.username.toUpperCase()}`)
+                litotalscore.text(` Total: ${item.totalscore}   ${item.username.charAt(0).toUpperCase() + item.username.slice(1).toLowerCase()}`)
                 ultotalscore.append(litotalscore)
             })
         })
@@ -166,7 +166,7 @@ $(document).ready(function() {
                 var libestscore = $('<li>')
                 mydata.push(item.totalscore)
                 libestscore.addClass('rating')
-                libestscore.text(` Best: ${item.totalscore}   ${item.username.toUpperCase()}`)
+                libestscore.text(` Best: ${item.totalscore}   ${item.username.charAt(0).toUpperCase() + item.username.slice(1).toLowerCase()}`)
                 ulbestscore.append(libestscore)
             })
     
@@ -183,7 +183,7 @@ $(document).ready(function() {
                 var item = data[key]
                 var lilevel = $('<li>')
                 lilevel.addClass('rating')
-                lilevel.text(` Level: ${item.level}   ${item.username.toUpperCase()}`)
+                lilevel.text(` Level: ${item.level}   ${item.username.charAt(0).toUpperCase() + item.username.slice(1).toLowerCase()}`)
                 ullevel.append(lilevel)
             })
         })
@@ -826,7 +826,7 @@ $(document).ready(function() {
                 $('#best_score').text(`Best Score:  ${bestscore}`)
                 $('#new_score').text(`Sonuncu Oyun Scoru:  ${newscore}`)
                 $('#total_score').text(`Umumi Toplanan Yumurtalar:  ${totalscore}`)
-                $('#usernames').text(`username:  ${username.toUpperCase()}`)
+                $('#usernames').text(`username:  ${username.charAt(0).toUpperCase() + username.slice(1).toLowerCase()}`)
                 $('.esas').hide()
                 $('.helps').hide()
                 $('#haqqindashow').hide()

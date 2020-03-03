@@ -167,9 +167,9 @@ $(document).ready(function() {
             Object.keys(data).map(key => {
                 var item = data[key]
                 var libestscore = $('<li>')
-                mydata.push(item.totalscore)
+                mydata.push(item.bestscore)
                 libestscore.addClass('rating')
-                libestscore.text(` Best: ${item.totalscore}   ${item.username.charAt(0).toUpperCase() + item.username.slice(1).toLowerCase()}`)
+                libestscore.text(` Best: ${item.bestscore}   ${item.username.charAt(0).toUpperCase() + item.username.slice(1).toLowerCase()}`)
                 ulbestscore.append(libestscore)
             })
     

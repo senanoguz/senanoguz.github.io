@@ -152,7 +152,7 @@ $(document).ready(function() {
                 var item = data[key]
                 var litotalscore = $('<li>')
                 litotalscore.addClass('rating')
-                litotalscore.text(` Total: ${item.totalscore}   ${item.username}`)
+                litotalscore.text(` Total: ${item.totalscore}   ${item.username.toUpperCase()}`)
                 ultotalscore.append(litotalscore)
             })
         })
@@ -166,7 +166,7 @@ $(document).ready(function() {
                 var libestscore = $('<li>')
                 mydata.push(item.totalscore)
                 libestscore.addClass('rating')
-                libestscore.text(` Best: ${item.totalscore}   ${item.username}`)
+                libestscore.text(` Best: ${item.totalscore}   ${item.username.toUpperCase()}`)
                 ulbestscore.append(libestscore)
             })
     
@@ -183,12 +183,12 @@ $(document).ready(function() {
                 var item = data[key]
                 var lilevel = $('<li>')
                 lilevel.addClass('rating')
-                lilevel.text(` Level: ${item.level}   ${item.username}`)
+                lilevel.text(` Level: ${item.level}   ${item.username.toUpperCase()}`)
                 ullevel.append(lilevel)
             })
         })
 
-        
+
         // var ratingscore = firebase.database().ref('/rating')
         // ratingscore.on('value', function(res) {
         //     var ulbestscore = $('#rating_bestscore')

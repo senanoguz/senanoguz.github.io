@@ -125,6 +125,12 @@ $(document).ready(function() {
     $('#btnregister').on('click', function() {
         gameRegister()
     })
+    var totalscorerank = []
+    var bestscorerank = []
+    var ullevel = $('#rating_level')
+    // var levelscorerank = []
+
+
 
 
 //     var scoresRef = firebase.database().ref("rating").orderByChild('bestscore').limitToLast(5);
@@ -138,31 +144,78 @@ $(document).ready(function() {
     //reytinge qederki datani almaq
     function allrating() {
         var ratingscore = firebase.database().ref('/rating')
-        ratingscore.on('value', function(res) {
-            var ulbestscore = $('#rating_bestscore')
-            var ultotalscore = $('#rating_totalscore')
-            var ullevel = $('#rating_level')
-            ulbestscore.empty()
-            ultotalscore.empty()
-            ullevel.empty()
-                // libestscore.empty()
-                // litotalscore.empty()
-                // lilevel.empty()
+        ratingscore.orderByChild('totalscore').limitToLast(10).on('value', function(res) {
             var data = res.val()
-            Object.keys(data).reverse().map(key => {
-                var libestscore = $('<li>')
-                var litotalscore = $('<li>')
-                var lilevel = $('<li>')
+            var ultotalscore = $('#rating_totalscore')
+            ultotalscore.empty()
+            Object.keys(data).map(key => {
                 var item = data[key]
-                libestscore.addClass('rating')
+                var litotalscore = $('<li>')
                 litotalscore.addClass('rating')
-                lilevel.addClass('rating')
-                libestscore.text(`  (${item.bestscore})  ${item.username.toUpperCase()}`)
-                ulbestscore.append(libestscore)
-                litotalscore.text(` (${item.totalscore})   ${item.username.toUpperCase()}`)
+                litotalscore.text(` Total: ${item.totalscore}   ${item.username}`)
                 ultotalscore.append(litotalscore)
-                lilevel.text(` (${item.level})    ${item.username.toUpperCase()}`)
+            })
+        })
+        ratingscore.orderByChild('bestscore').limitToLast(10).on('value', function(res) {
+            var data = res.val()
+            var mydata = []
+            var ulbestscore = $('#rating_bestscore')
+            ulbestscore.empty()
+            Object.keys(data).map(key => {
+                var item = data[key]
+                var libestscore = $('<li>')
+                mydata.push(item.totalscore)
+                libestscore.addClass('rating')
+                libestscore.text(` Best: ${item.totalscore}   ${item.username}`)
+                ulbestscore.append(libestscore)
+            })
+    
+        })
+        ratingscore.orderByChild('level').limitToLast(10).on('value', function(res) {
+            // levelscorerank.push({
+            //     level : res.val().level,
+            //     username: res.val().username
+            // })
+            var data = res.val()
+               ullevel = $('#rating_level')
+            ullevel.empty()
+            Object.keys(data).map(key => {
+                var item = data[key]
+                var lilevel = $('<li>')
+                lilevel.addClass('rating')
+                lilevel.text(` Level: ${item.level}   ${item.username}`)
                 ullevel.append(lilevel)
+            })
+        })
+
+        
+        // var ratingscore = firebase.database().ref('/rating')
+        // ratingscore.on('value', function(res) {
+        //     var ulbestscore = $('#rating_bestscore')
+        //     // var ultotalscore = $('#rating_totalscore')
+        //     // var ullevel = $('#rating_level')
+        //     // ulbestscore.empty()
+        //     // ultotalscore.empty()
+
+        //     ullevel.empty()
+        //         // libestscore.empty()
+        //         // litotalscore.empty()
+        //         // lilevel.empty()
+        //     var data = res.val()
+        //     Object.keys(data).map(key => {
+        //         var libestscore = $('<li>')
+        //         // var litotalscore = $('<li>')
+        //         var lilevel = $('<li>')
+        //         var item = data[key]
+        //         libestscore.addClass('rating')
+        //         // litotalscore.addClass('rating')
+        //         lilevel.addClass('rating')
+                // libestscore.text(`  (${item.bestscore})  ${item.username.toUpperCase()}`)
+                // ulbestscore.append(libestscore)
+                // litotalscore.text(` (${item.totalscore})   ${item.username.toUpperCase()}`)
+                // ultotalscore.append(litotalscore)
+                // lilevel.text(` (${item.level})    ${item.username.toUpperCase()}`)
+                // ullevel.append(lilevel)
                     // //scorebest
                     // var scorebest = $('<span>')
                     // scorebest.css('background','red')
@@ -197,8 +250,8 @@ $(document).ready(function() {
                 // }
                 // console.log(maxi)
 
-            })
-        })
+        //     })
+        // })
     }
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {

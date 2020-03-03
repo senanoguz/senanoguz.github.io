@@ -569,7 +569,7 @@ $(document).ready(function() {
 
 
 
-                $('.melumatlar').css('background', 'url(shekiller/background.png)')
+                $('.melumatlar').css('background', 'url(shekiller/background.jpg)')
                 count = (6000 * leveltimeprice)
                 $('#gameoverimg').hide()
                 $('#gameover').hide()
@@ -881,7 +881,7 @@ $(document).ready(function() {
             var bosalt
 
             function guestGame() {
-                $('.melumatlar').css('background', 'url(shekiller/background.jpg)')
+                $('.melumatlar').css('background', 'url(/shekiller/background.jpg)')
                 count = 6000
                 $('#gameoverimg').hide()
                 $('#gameover').hide()

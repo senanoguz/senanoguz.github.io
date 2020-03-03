@@ -75,6 +75,7 @@ $(document).ready(function() {
     }
 
     function gameRegister() {
+        console.log(username)
         var username = $('#username').val()
         var email = $('#email').val()
         var password = $('#password').val()
@@ -261,9 +262,9 @@ $(document).ready(function() {
             current_user = user.uid
             var div = $('.userlogin')
             var button = $('<button>')
-            button.addClass('btn btn-danger logout')
             $('.logout').empty()
-            button.text('Logout')
+            button.addClass('btn btn-danger logout')
+            button.text(`Hesabdan Çıxış`)
             div.append(button)
             $('.logout').on('click', function() {
                 firebase.auth().signOut()
@@ -870,7 +871,7 @@ $(document).ready(function() {
                 // leveldiv.append(kecid)
                 $('#best_score').text(`Best Score:  ${bestscore}`)
                 $('#new_score').text(`Sonuncu Oyun Scoru:  ${newscore}`)
-                $('#total_score').text(`Umumi Toplanan Yumurtalar:  ${totalscore}`)
+                $('#total_score').text(`Total Score:  ${totalscore}`)
                 $('#usernames').text(`username:  ${username.charAt(0).toUpperCase() + username.slice(1).toLowerCase()}`)
                 $('.esas').hide()
                 $('.helps').hide()

@@ -132,22 +132,22 @@
                             <div class="form-box">
                                 <div>
                                     <div class="alert alert-primary userlogin">
-                                        <button type="button" class="btn btn-primary" onclick="login()">Login</button>
-                                        <button type="button" class="btn btn-dark" onclick="register()">Register</button>
+                                        <button type="button" class="btn btn-primary" onclick="login()">Giriş</button>
+                                        <button type="button" class="btn btn-dark" onclick="register()">Qeydiyyat</button>
                                     </div>
                                 </div>
                                 <div id="login" class="input-group">
-                                    <input type="text" id="username_log" class="input-field" placeholder="User ID">
-                                    <input type="password" id="password_log" class="input-field" placeholder="Enter Password">
-                                    <button type="submit" id="btnlogin" class="submit-btn">Login</button>
+                                    <input type="text" id="username_log" class="input-field" placeholder="Email adresiniz">
+                                    <input type="password" id="password_log" class="input-field" placeholder="Parolunuz">
+                                    <button type="submit" id="btnlogin" class="submit-btn">Giriş</button>
                                     <div id="okay"></div>
                                 </div>
                                 <div id="register" class="input-group">
-                                    <input type="text" id="username" class="input-field" placeholder="User ID">
-                                    <input type="email" id="email" class="input-field" placeholder="Email">
-                                    <input type="password" id="password" class="input-field" placeholder="Enter Password">
-                                    <input type="password" id="password2" class="input-field" placeholder="Enter Again Password">
-                                    <button type="submit" id="btnregister" class="submit-btn">Register</button>
+                                    <input type="text" id="username" class="input-field" placeholder="Adınız">
+                                    <input type="email" id="email" class="input-field" placeholder="Email adresiniz">
+                                    <input type="password" id="password" class="input-field" placeholder="Parolunuz">
+                                    <input type="password" id="password2" class="input-field" placeholder="Parolunuzun təkrarı">
+                                    <button type="submit" id="btnregister" class="submit-btn">Qeydiyyat Ol</button>
                                     <div id="tamam"></div>
                                 </div>
                             </div>
@@ -163,7 +163,7 @@
                             <div>username:</div>
                         </div> -->
                         <div class="neticeler noselect">
-                            <div class="p-3 mb-2 bg-success text-black"> <span id="level"></span>
+                            <div class="p-3 bg-light text-black"> <span id="level"></span>
                                 <div id="bar">
 
                                     <div id="bar2"></div>
@@ -171,15 +171,35 @@
                                 </div>
                                 <div id="kecid"></div>
                             </div>
-                            <div class="p-3 mb-2 bg-danger text-white" id="best_score">Best Score:</div>
-                            <div class="p-3 mb-2 bg-danger text-white" id="new_score">Sonuncu Oyun Scoru:</div>
-                            <div class="p-3 mb-2 bg-danger text-white" id="total_score">Umumi Toplanan Yumurtalar:</div>
-                            <div class="p-3 mb-2 bg-success text-black" id="usernames"></div>
+                            <div class="p-3 mb-1  bg-success text-black" id="usernames"></div>
+                            <div class="p-3 mb-1 bg-danger text-white" id="best_score">Best Score:</div>
+                            <div class="p-3 mb-1 bg-danger text-white" id="new_score">Sonuncu Oyun Scoru:</div>
+                            <div class="p-3 mb-1 bg-danger text-white" id="total_score">Total Score:</div>
+
 
                         </div>
-                        <div class="text-center">
-                            <img src="shekiller/sebetlidovsan.png" alt="" srcset="" id="dovshan" width="270px" height="290px">
-                        </div>
+
+                        <!-- Level Ucun Ayrilmis Sahe -->
+                        <!-- <div class="message">
+                            <div id="messagelv" style="max-width: 80%;">
+                            <div id="messagelvup" style="display: none;" class="alert alert-light alert-dismissible fade show" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    <span class="sr-only">Close</span>
+                                </button>
+                                <strong class="text-success">Urra</strong> <span class="text-dark">Leveli geride qoydunuz Cox gozel irelileyirsiniz:)</span>
+                            </div>
+                            <div id="messagelv" class="alert alert-light alert-dismissible fade show" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    <span class="sr-only">Close</span>
+                                </button>
+                                <strong class="text-success">S</strong> <span class="text-dark">Leveli geride qoydunuz Cox gozel irelileyirsiniz:)</span>
+                            </div>
+
+                            </div>
+                            <div id="levelphoto"><img src="shekiller/lvprs/lv1.png" width="150px" height="200px"></div>
+                        </div> -->
                     </div>
 
 

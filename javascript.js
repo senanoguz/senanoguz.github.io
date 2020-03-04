@@ -26,8 +26,12 @@ function levelshow() {
 }
 
 var bonusBalonRandomXal = 1
-var bonusBalonRandomYumurta = 500
-
+var bonusBalonRandomYumurta = 1
+var messagelvupstrong
+var messagelvupspan
+var messagegamestartspan
+var messagegamestartstrong
+var levelphoto
 $(document).ready(function() {
     var firebaseConfig = {
         apiKey: "AIzaSyAJLO2LSewcHg0Me_bGgB-byeZB9cr4f-Y",
@@ -325,6 +329,10 @@ $(document).ready(function() {
             var bosalt
 
             function userGame() {
+                $('#best_score').text(`Best Score:  ${bestscore}`)
+                $('#new_score').text(`Sonuncu Oyun Scoru:  ${newscore}`)
+                $('#total_score').text(`Total Score:  ${totalscore}`)
+                $('#usernames').text(`username:  ${username}`)
                 //faiz
                 var faizcubugu
                     //hazirdi
@@ -333,6 +341,7 @@ $(document).ready(function() {
                 function faiz() {
 
                     if (totalscore + xal >= -1 && totalscore + xal < 25) {
+
                         level = 0;
                         kecid = 25
                         faizcubugu = ((totalscore + xal) / 25) * 100;
@@ -341,6 +350,24 @@ $(document).ready(function() {
                         $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
                     }
                     if (totalscore + xal >= 25 && totalscore + xal < 50) {
+                        if (totalscore + xal > 26){
+                            $('#messagegamestart').addClass('animated fadeOutRight')
+                            $('#messagelvup').hide()
+                            $('#levelupphoto').addClass('animated fadeOutRight')
+                            messagelvupstrong = 'Urra...!'
+                            messagelvupspan= 'Artıq 1 ci level oldunuz Təbriklər !!!'
+                            $('.messagelvupstrong').text(messagelvupstrong)
+                            $('.messagelvupspan').text(messagelvupspan)
+                            $('#messagelvup').addClass('animated bounce')
+                            $('#messagelvup').show()
+                            $('#messagelvup').addClass('animated fadeInDown')
+                            $('#levelphoto').addClass('animated fadeOutLeft')
+                            $('#levelupphoto').attr('src','shekiller/lvprs/lv1.png').css('width','100px').css('height','120px')
+                            $('#levelupphoto').addClass('animated flip')
+                            $('#levelphoto').empty('animated fadeOutLeft')
+                            $('#levelupphoto').css('position','relative').css('bottom','240px').css('left','40px')
+                            $('#levelupphoto').show()
+                        }
                         level = 1;
                         kecid = 50
                         faizcubugu = ((totalscore + xal) / 50) * 100;
@@ -349,6 +376,24 @@ $(document).ready(function() {
                         $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
                     }
                     if (totalscore + xal >= 50 && totalscore + xal < 80) {
+                        if (totalscore + xal > 51){
+                            $('#messagegamestart').addClass('animated fadeOutRight')
+                            $('#messagelvup').hide()
+                            $('#levelupphoto').addClass('animated fadeOutRight')
+                            messagelvupstrong = 'Urra...!'
+                            messagelvupspan= 'Artıq 2 ci level oldunuz Təbriklər !!!'
+                            $('.messagelvupstrong').text(messagelvupstrong)
+                            $('.messagelvupspan').text(messagelvupspan)
+                            $('#messagelvup').addClass('animated bounce')
+                            $('#messagelvup').show()
+                            $('#messagelvup').addClass('animated fadeInDown')
+                            $('#levelphoto').addClass('animated fadeOutLeft')
+                            $('#levelupphoto').attr('src','shekiller/lvprs/lv2.png').css('width','100px').css('height','120px')
+                            $('#levelupphoto').addClass('animated flip')
+                            $('#levelphoto').empty('animated fadeOutLeft')
+                            $('#levelupphoto').css('position','relative').css('bottom','240px').css('left','40px')
+                            $('#levelupphoto').show()
+                        }
                         level = 2;
                         kecid = 80
                         faizcubugu = ((totalscore + xal) / 80) * 100;
@@ -358,6 +403,26 @@ $(document).ready(function() {
 
                     }
                     if (totalscore + xal >= 80 && totalscore + xal < 100) {
+                        if (totalscore + xal >= 81){
+                            console.log('ici')
+                            $('#messagegamestart').addClass('animated fadeOutRight')
+                            $('#messagelvup').hide()
+                            $('#levelupphoto').addClass('animated fadeOutRight')
+                            messagelvupstrong = 'Afərinnn ....!!! '
+                            messagelvupspan= 'Bir oyunda bu nəticəyə hər istifadəçi çata bilmir Level 3 oldunuz Təbrik edirəm'
+                            $('.messagelvupstrong').text(messagelvupstrong)
+                            $('.messagelvupspan').text(messagelvupspan)
+                            $('#messagelvup').addClass('animated bounce')
+                            $('#messagelvup').show()
+                            $('#messagelvup').addClass('animated fadeInDown')
+                            $('#levelphoto').addClass('animated fadeOutLeft')
+                            $('#levelupphoto').attr('src','shekiller/lvprs/lv3.png').css('width','100px').css('height','120px')
+                            $('#levelupphoto').addClass('animated flip')
+                            $('#levelphoto').empty('animated fadeOutLeft')
+                            $('#levelupphoto').css('position','relative').css('bottom','240px').css('left','40px')
+                            $('#levelupphoto').show()
+                        }
+                        
                         level = 3;
                         kecid = 100
                         faizcubugu = ((totalscore + xal) / 100) * 100;
@@ -366,6 +431,26 @@ $(document).ready(function() {
                         $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
                     }
                     if (totalscore + xal >= 100 && totalscore + xal < 150) {
+                        console.log('icoluci')
+
+
+                        if (totalscore + xal >= 101){
+                            $('#messagegamestart').addClass('animated fadeOutRight')
+                            $('#messagelvup').hide()
+                            $('#levelupphoto').addClass('animated fadeOutRight')
+                            messagelvupstrong = 'Məni Təccübləndirməyə davam edirsiz ))'
+                            messagelvupspan= 'Level 4 oldunuz Çox yaxşı irəliləyirsiniz'
+                            $('.messagelvupstrong').text(messagelvupstrong)
+                            $('.messagelvupspan').text(messagelvupspan)
+                            $('#messagelvup').show()
+                            $('#messagelvup').addClass('animated fadeInDown')
+                            $('#levelphoto').addClass('animated fadeOutLeft')
+                            $('#levelupphoto').attr('src','shekiller/lvprs/lv4.png').css('width','100px').css('height','120px')
+                            $('#levelupphoto').addClass('animated flip')
+                            $('#levelphoto').empty('animated fadeOutLeft')
+                            $('#levelupphoto').css('position','relative').css('bottom','240px').css('left','40px')
+                            $('#levelupphoto').show()
+                        }
                         kecid = 150
                         level = 4;
                         faizcubugu = ((totalscore + xal) / kecid) * 100;
@@ -374,6 +459,24 @@ $(document).ready(function() {
                         $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
                     }
                     if (totalscore + xal >= 150 && totalscore + xal < 250) {
+                        if (totalscore + xal >= 151){
+                            $('#messagegamestart').addClass('animated fadeOutRight')
+                            $('#messagelvup').hide()
+                            $('#levelupphoto').addClass('animated fadeOutRight')
+                            messagelvupstrong = 'Level 5 oldunuz Təbriklər'
+                            messagelvupspan= 'Dovşanlarınız sizi çox sevir onlara çox yaxşı qulluq edirsiniz :)'
+                            $('.messagelvupstrong').text(messagelvupstrong)
+                            $('.messagelvupspan').text(messagelvupspan)
+                            $('#messagelvup').addClass('animated bounce')
+                            $('#messagelvup').show()
+                            $('#messagelvup').addClass('animated fadeInDown')
+                            $('#levelphoto').addClass('animated fadeOutLeft')
+                            $('#levelupphoto').attr('src','shekiller/lvprs/lv5.png').css('width','100px').css('height','120px')
+                            $('#levelupphoto').addClass('animated flip')
+                            $('#levelphoto').empty('animated fadeOutLeft')
+                            $('#levelupphoto').css('position','relative').css('bottom','240px').css('left','40px')
+                            $('#levelupphoto').show()
+                        }
                         kecid = 250
                         level = 5;
                         faizcubugu = ((totalscore + xal) / kecid) * 100;
@@ -382,6 +485,24 @@ $(document).ready(function() {
                         $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
                     }
                     if (totalscore + xal >= 250 && totalscore + xal < 500) {
+                        if (totalscore + xal >= 500){
+                            $('#messagegamestart').addClass('animated fadeOutRight')
+                            $('#messagelvup').hide()
+                            $('#levelupphoto').addClass('animated fadeOutRight')
+                            messagelvupstrong = 'Nəhayət 6 -cı Levelsiniz Əla...'
+                            messagelvupspan= 'Dovşanlar çox şanslıdır :)'
+                            $('.messagelvupstrong').text(messagelvupstrong)
+                            $('.messagelvupspan').text(messagelvupspan)
+                            $('#messagelvup').addClass('animated bounce')
+                            $('#messagelvup').show()
+                            $('#messagelvup').addClass('animated fadeInDown')
+                            $('#levelphoto').addClass('animated fadeOutLeft')
+                            $('#levelupphoto').attr('src','shekiller/lvprs/lv6.png').css('width','100px').css('height','120px')
+                            $('#levelupphoto').addClass('animated flip')
+                            $('#levelphoto').empty('animated fadeOutLeft')
+                            $('#levelupphoto').css('position','relative').css('bottom','240px').css('left','40px')
+                            $('#levelupphoto').show()
+                        }
                         kecid = 500
                         level = 6;
                         faizcubugu = ((totalscore + xal) / kecid) * 100;
@@ -390,6 +511,24 @@ $(document).ready(function() {
                         $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
                     }
                     if (totalscore + xal >= 500 && totalscore + xal < 800) {
+                        if (totalscore + xal >= 800){
+                            $('#messagegamestart').addClass('animated fadeOutRight')
+                            $('#messagelvup').hide()
+                            $('#levelupphoto').addClass('animated fadeOutRight')
+                            messagelvupstrong = 'Oyunda inanın ki ən yaxşılardansınız...'
+                            messagelvupspan= 'Çox sürrətlə Level 7 oldunuz Afərin.'
+                            $('.messagelvupstrong').text(messagelvupstrong)
+                            $('.messagelvupspan').text(messagelvupspan)
+                            $('#messagelvup').addClass('animated bounce')
+                            $('#messagelvup').show()
+                            $('#messagelvup').addClass('animated fadeInDown')
+                            $('#levelphoto').addClass('animated fadeOutLeft')
+                            $('#levelupphoto').attr('src','shekiller/lvprs/lv7.png').css('width','100px').css('height','120px')
+                            $('#levelupphoto').addClass('animated flip')
+                            $('#levelphoto').empty('animated fadeOutLeft')
+                            $('#levelupphoto').css('position','relative').css('bottom','240px').css('left','40px')
+                            $('#levelupphoto').show()
+                        }
                         kecid = 800
                         level = 7;
                         faizcubugu = ((totalscore + xal) / kecid) * 100;
@@ -398,6 +537,24 @@ $(document).ready(function() {
                         $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
                     }
                     if (totalscore + xal >= 800 && totalscore + xal < 1200) {
+                        if (totalscore + xal >= 1200){
+                            $('#messagegamestart').addClass('animated fadeOutRight')
+                            $('#messagelvup').hide()
+                            $('#levelupphoto').addClass('animated fadeOutRight')
+                            messagelvupstrong = 'Siz bu oyunu'
+                            messagelvupspan= 'Bu oyunda sizi çox sevdi :) Level 8 Afərin'
+                            $('.messagelvupstrong').text(messagelvupstrong)
+                            $('.messagelvupspan').text(messagelvupspan)
+                            $('#messagelvup').addClass('animated bounce')
+                            $('#messagelvup').show()
+                            $('#messagelvup').addClass('animated fadeInDown')
+                            $('#levelphoto').addClass('animated fadeOutLeft')
+                            $('#levelupphoto').attr('src','shekiller/lvprs/lv8.png').css('width','100px').css('height','120px')
+                            $('#levelupphoto').addClass('animated flip')
+                            $('#levelphoto').empty('animated fadeOutLeft')
+                            $('#levelupphoto').css('position','relative').css('bottom','240px').css('left','40px')
+                            $('#levelupphoto').show()
+                        }
                         kecid = 1200
                         level = 8;
                         faizcubugu = ((totalscore + xal) / kecid) * 100;
@@ -406,6 +563,24 @@ $(document).ready(function() {
                         $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
                     }
                     if (totalscore + xal >= 1200 && totalscore + xal < 1700) {
+                        if (totalscore + xal >= 1700){
+                            $('#messagegamestart').addClass('animated fadeOutRight')
+                            $('#messagelvup').hide()
+                            $('#levelupphoto').addClass('animated fadeOutRight')
+                            messagelvupstrong = 'Gözlərimə inanmıram Level 9'
+                            messagelvupspan= `Dovşanlarınız ${totalscore} ədəd  yumurta ehtiyatını yığdı Sayənizdə ))`
+                            $('.messagelvupstrong').text(messagelvupstrong)
+                            $('.messagelvupspan').text(messagelvupspan)
+                            $('#messagelvup').addClass('animated bounce')
+                            $('#messagelvup').show()
+                            $('#messagelvup').addClass('animated fadeInDown')
+                            $('#levelphoto').addClass('animated fadeOutLeft')
+                            $('#levelupphoto').attr('src','shekiller/lvprs/lv9.png').css('width','100px').css('height','120px')
+                            $('#levelupphoto').addClass('animated flip')
+                            $('#levelphoto').empty('animated fadeOutLeft')
+                            $('#levelupphoto').css('position','relative').css('bottom','240px').css('left','40px')
+                            $('#levelupphoto').show()
+                        }
                         kecid = 1700
                         level = 9;
                         faizcubugu = ((totalscore + xal) / kecid) * 100;
@@ -414,6 +589,24 @@ $(document).ready(function() {
                         $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
                     }
                     if (totalscore + xal >= 1700 && totalscore + xal < 2500) {
+                        if (totalscore + xal >= 2500){
+                            $('#messagegamestart').addClass('animated fadeOutRight')
+                            $('#messagelvup').hide()
+                            $('#levelupphoto').addClass('animated fadeOutRight')
+                            messagelvupstrong = 'Artıq Bu işin Ustadısınız...!'
+                            messagelvupspan= `Dovşanlarınızın bu il ac qalmayacaq buna əmin olun :) Level 10`
+                            $('.messagelvupstrong').text(messagelvupstrong)
+                            $('.messagelvupspan').text(messagelvupspan)
+                            $('#messagelvup').addClass('animated bounce')
+                            $('#messagelvup').show()
+                            $('#messagelvup').addClass('animated fadeInDown')
+                            $('#levelphoto').addClass('animated fadeOutLeft')
+                            $('#levelupphoto').attr('src','shekiller/lvprs/lv10.png').css('width','100px').css('height','120px')
+                            $('#levelupphoto').addClass('animated flip')
+                            $('#levelphoto').empty('animated fadeOutLeft')
+                            $('#levelupphoto').css('position','relative').css('bottom','240px').css('left','40px')
+                            $('#levelupphoto').show()
+                        }
                         kecid = 2500
                         level = 10;
                         faizcubugu = ((totalscore + xal) / kecid) * 100;
@@ -422,6 +615,24 @@ $(document).ready(function() {
                         $('#kecid').text(`${kecid} / ${totalscore + xal} = ${faizcubugu.toFixed(2)}`)
                     }
                     if (totalscore + xal >= 2500 && totalscore + xal < 5000) {
+                        if (totalscore + xal >= 5000){
+                            $('#messagegamestart').addClass('animated fadeOutRight')
+                            $('#messagelvup').hide()
+                            $('#levelupphoto').addClass('animated fadeOutRight')
+                            messagelvupstrong = 'Level 11 olmağınız'
+                            messagelvupspan= `sizi fərqləndirir Təbriklər`
+                            $('.messagelvupstrong').text(messagelvupstrong)
+                            $('.messagelvupspan').text(messagelvupspan)
+                            $('#messagelvup').addClass('animated bounce')
+                            $('#messagelvup').show()
+                            $('#messagelvup').addClass('animated fadeInDown')
+                            $('#levelphoto').addClass('animated fadeOutLeft')
+                            $('#levelupphoto').attr('src','shekiller/lvprs/lv11.png').css('width','100px').css('height','120px')
+                            $('#levelupphoto').addClass('animated flip')
+                            $('#levelphoto').empty('animated fadeOutLeft')
+                            $('#levelupphoto').css('position','relative').css('bottom','240px').css('left','40px')
+                            $('#levelupphoto').show()
+                        }
                         kecid = 5000
                         level = 11;
                         faizcubugu = ((totalscore + xal) / kecid) * 100;
@@ -478,55 +689,317 @@ $(document).ready(function() {
                 }
                 faiz()
                 function ratingsystem() {
+                    var text
+                    var span
                     if (totalscore + xal < 25) {
                         level = 0
                         leveltimeprice = 1
+                        var lv0message =1 +  Math.floor(Math.random() * 3);
+
+                        if (lv0message === 1)
+                        {
+                        span = 'Başlanğıc'
+                        text = '-da dovşanınızı biraz yumurta topladaraq sevindirəsiniz bəlkə ? :)'
+                        }
+                        if (lv0message === 2)
+                        {
+                        span = 'Oyunumuz'
+                        text = 'sizə çox asan görünə bilər... Ancaq hər şey göründüyü kimi olmaya bilər :)'
+                        }
+                        if (lv0message === 3)
+                        {
+                        span = 'İlk'
+                        text = 'olaraq onu deyim ki dovşanlar üçün yığdığınız yumurtalar sizin həmdə levelinizi artırır'
+                        }
+                        $('.messagegamestartstrong').text(span)
+                        $('.messagegamestartspan').text(text)
+                        $('#levelphoto').attr('src','shekiller/lvprs/lv0.png').css('width','100px').css('height','150px')
                     }
                     if (totalscore + xal > 25) {
+                        var lv1message =1 +  Math.floor(Math.random() * 3);
+                        if (lv1message === 1)
+                        {
+                        span = 'Artıq'
+                        text = '1-ci leveldəsiniz  qollarınızı çirmələyin hələ yeni başlayırsınız :)'
+                        }
+                        if (lv1message === 2)
+                        {
+                        span = 'Biz'
+                        text = 'sizə Elm verə bilmərik... Amma analitik düşünmə qabiliyyətinizi artıra bilərik '
+                        }
+                        if (lv1message === 3)
+                        {
+                        span = 'Dovşanlarınız'
+                        text = 'üçün yumurta yığırsınız onlar sizə çox  minnətdardır :)'
+                        }
+                        $('.messagegamestartstrong').text(span)
+                        $('.messagegamestartspan').text(text)
+                        $('#levelphoto').attr('src','shekiller/lvprs/lv1.png').css('width','100px').css('height','120px')
                         level = 1
                         leveltimeprice = 2
                     }
                     if (totalscore + xal > 50) {
+                        var lv2message =1 +  Math.floor(Math.random() * 3);
+                        if (lv2message === 1)
+                        {
+                        span = 'Artıq'
+                        text = '2-ci leveldəsiniz Bu hələ başlanğıcdır hə? Bizə bunu subut et )'
+                        }
+                        if (lv2message === 2)
+                        {
+                        span = 'Bəlkə'
+                        text = 'bir neçə balonu vura bilmədin düşdü yerə. Narahat olma biz hər vurduğunuz balona görə sizə əlavə Bonuslar veririk '
+                        }
+                        if (lv2message === 3)
+                        {
+                        span = 'İpucu'
+                        text = 'Hər balonun içində yumurta sayı fərqlidir ) bunu bilirdiz  ?'
+                        }
+                        $('.messagegamestartstrong').text(span)
+                        $('.messagegamestartspan').text(text)
+                        $('#levelphoto').attr('src','shekiller/lvprs/lv2.png').css('width','100px').css('height','120px')
+                       
                         level = 2
                         leveltimeprice = 3
+                        
                     }
                     if (totalscore + xal > 80) {
+                        var lv3message =1 +  Math.floor(Math.random() * 3);
+                        if (lv3message === 1)
+                        {
+                        span = 'İpucu'
+                        text = 'Balonları vurmağ üçün click sayında limit yoxdur sizin mouse xarab ola bilər ancaq bizim güllə sayımız bitməz ))'
+                        }
+                        if (lv3message === 2)
+                        {
+                        span = 'Yenilik ?'
+                        text = 'Oyunumuzda nə yeniliklər görmək istərdiniz ? senanoguz@mail.ru ünvanına yazın göndərin :) '
+                        }
+                        if (lv3message === 3)
+                        {
+                        span = 'İpucu'
+                        text = 'Oyunda olan şarlar artıqca vaxtınız hər itirlən şara görə -1 saniyə geri gedir Tələsin'
+                        }
+                        $('.messagegamestartstrong').text(span)
+                        $('.messagegamestartspan').text(text)
+                        $('#levelphoto').attr('src','shekiller/lvprs/lv3.png').css('width','100px').css('height','120px')
+                       
                         level = 3
                         leveltimeprice = 4
                     }
                     if (totalscore + xal > 100) {
+                        var lv4message =1 +  Math.floor(Math.random() * 3);
+                        if (lv4message === 1)
+                        {
+                        span = 'İpucu'
+                        text = 'Balonları vurmağ üçün click sayında limit yoxdur sizin mouse xarab ola bilər ancaq bizim güllə sayımız bitməz ))'
+                        }
+                        if (lv4message === 2)
+                        {
+                        span = 'Yenilik ?'
+                        text = 'Oyunumuzda nə yeniliklər görmək istərdiniz ? senanoguz@mail.ru ünvanına yazın göndərin :) '
+                        }
+                        if (lv4message === 3)
+                        {
+                        span = 'İpucu'
+                        text = 'Oyunda olan şarlar artıqca vaxtınız hər itirlən şara görə -1 saniyə geri gedir Tələsin'
+                        }
+                        $('.messagegamestartstrong').text(span)
+                        $('.messagegamestartspan').text(text)
+                        $('#levelphoto').attr('src','shekiller/lvprs/lv3.png').css('width','100px').css('height','120px')
+                       
                         level = 4
                         leveltimeprice = 5
                     }
                     if (totalscore + xal > 150) {
+                        var lv5message =1 +  Math.floor(Math.random() * 3);
+                        if (lv5message === 1)
+                        {
+                        span = 'İpucu'
+                        text = 'Balonları vurmağ üçün click sayında limit yoxdur sizin mouse xarab ola bilər ancaq bizim güllə sayımız bitməz ))'
+                        }
+                        if (lv5message === 2)
+                        {
+                        span = 'Yenilik ?'
+                        text = 'Oyunumuzda nə yeniliklər görmək istərdiniz ? senanoguz@mail.ru ünvanına yazın göndərin :) '
+                        }
+                        if (lv5message === 3)
+                        {
+                        span = 'İpucu'
+                        text = 'Oyunda olan şarlar artıqca vaxtınız hər itirlən şara görə -1 saniyə geri gedir Tələsin'
+                        }
+                        $('.messagegamestartstrong').text(span)
+                        $('.messagegamestartspan').text(text)
+                        $('#levelphoto').attr('src','shekiller/lvprs/lv3.png').css('width','100px').css('height','120px')
+                       
                         level = 5
                         leveltimeprice = 6
                     }
                     if (totalscore + xal > 250) {
+                        var lv6message =1 +  Math.floor(Math.random() * 3);
+                        if (lv6message === 1)
+                        {
+                        span = 'İpucu'
+                        text = 'Balonları vurmağ üçün click sayında limit yoxdur sizin mouse xarab ola bilər ancaq bizim güllə sayımız bitməz ))'
+                        }
+                        if (lv6message === 2)
+                        {
+                        span = 'Yenilik ?'
+                        text = 'Oyunumuzda nə yeniliklər görmək istərdiniz ? senanoguz@mail.ru ünvanına yazın göndərin :) '
+                        }
+                        if (lv6message === 3)
+                        {
+                        span = 'İpucu'
+                        text = 'Oyunda olan şarlar artıqca vaxtınız hər itirlən şara görə -1 saniyə geri gedir Tələsin'
+                        }
+                        $('.messagegamestartstrong').text(span)
+                        $('.messagegamestartspan').text(text)
+                        $('#levelphoto').attr('src','shekiller/lvprs/lv3.png').css('width','100px').css('height','120px')
+                       
                         level = 6
                         leveltimeprice = 8
                     }
                     if (totalscore + xal > 500) {
+                        var lv7message =1 +  Math.floor(Math.random() * 3);
+                        if (lv7message === 1)
+                        {
+                        span = 'İpucu'
+                        text = 'Balonları vurmağ üçün click sayında limit yoxdur sizin mouse xarab ola bilər ancaq bizim güllə sayımız bitməz ))'
+                        }
+                        if (lv7message === 2)
+                        {
+                        span = 'Yenilik ?'
+                        text = 'Oyunumuzda nə yeniliklər görmək istərdiniz ? senanoguz@mail.ru ünvanına yazın göndərin :) '
+                        }
+                        if (lv7message === 3)
+                        {
+                        span = 'İpucu'
+                        text = 'Oyunda olan şarlar artıqca vaxtınız hər itirlən şara görə -1 saniyə geri gedir Tələsin'
+                        }
+                        $('.messagegamestartstrong').text(span)
+                        $('.messagegamestartspan').text(text)
+                        $('#levelphoto').attr('src','shekiller/lvprs/lv3.png').css('width','100px').css('height','120px')
+                       
                         level = 7
                         leveltimeprice = 10
                     }
                     if (totalscore + xal > 800) {
+                        var lv8message =1 +  Math.floor(Math.random() * 3);
+                        if (lv8message === 1)
+                        {
+                        span = 'İpucu'
+                        text = 'Balonları vurmağ üçün click sayında limit yoxdur sizin mouse xarab ola bilər ancaq bizim güllə sayımız bitməz ))'
+                        }
+                        if (lv8message === 2)
+                        {
+                        span = 'Yenilik ?'
+                        text = 'Oyunumuzda nə yeniliklər görmək istərdiniz ? senanoguz@mail.ru ünvanına yazın göndərin :) '
+                        }
+                        if (lv8message === 3)
+                        {
+                        span = 'İpucu'
+                        text = 'Oyunda olan şarlar artıqca vaxtınız hər itirlən şara görə -1 saniyə geri gedir Tələsin'
+                        }
+                        $('.messagegamestartstrong').text(span)
+                        $('.messagegamestartspan').text(text)
+                        $('#levelphoto').attr('src','shekiller/lvprs/lv3.png').css('width','100px').css('height','120px')
+                       
                         level = 8
                         leveltimeprice = 12
                     }
                     if (totalscore + xal > 1200) {
+                        var lv9message =1 +  Math.floor(Math.random() * 3);
+                        if (lv9message === 1)
+                        {
+                        span = 'İpucu'
+                        text = 'Balonları vurmağ üçün click sayında limit yoxdur sizin mouse xarab ola bilər ancaq bizim güllə sayımız bitməz ))'
+                        }
+                        if (lv9message === 2)
+                        {
+                        span = 'Yenilik ?'
+                        text = 'Oyunumuzda nə yeniliklər görmək istərdiniz ? senanoguz@mail.ru ünvanına yazın göndərin :) '
+                        }
+                        if (lv9message === 3)
+                        {
+                        span = 'İpucu'
+                        text = 'Oyunda olan şarlar artıqca vaxtınız hər itirlən şara görə -1 saniyə geri gedir Tələsin'
+                        }
+                        $('.messagegamestartstrong').text(span)
+                        $('.messagegamestartspan').text(text)
+                        $('#levelphoto').attr('src','shekiller/lvprs/lv3.png').css('width','100px').css('height','120px')
+                       
                         level = 9
                         leveltimeprice = 15
                     }
                     if (totalscore + xal > 1700) {
+                        var lv10message =1 +  Math.floor(Math.random() * 3);
+                        if (lv10message === 1)
+                        {
+                        span = 'İpucu'
+                        text = 'Balonları vurmağ üçün click sayında limit yoxdur sizin mouse xarab ola bilər ancaq bizim güllə sayımız bitməz ))'
+                        }
+                        if (lv10message === 2)
+                        {
+                        span = 'Yenilik ?'
+                        text = 'Oyunumuzda nə yeniliklər görmək istərdiniz ? senanoguz@mail.ru ünvanına yazın göndərin :) '
+                        }
+                        if (lv10message === 3)
+                        {
+                        span = 'İpucu'
+                        text = 'Oyunda olan şarlar artıqca vaxtınız hər itirlən şara görə -1 saniyə geri gedir Tələsin'
+                        }
+                        $('.messagegamestartstrong').text(span)
+                        $('.messagegamestartspan').text(text)
+                        $('#levelphoto').attr('src','shekiller/lvprs/lv3.png').css('width','100px').css('height','120px')
+                       
                         level = 10
                         leveltimeprice = 18
                     }
                     if (totalscore + xal > 2500) {
+                        var lv11message =1 +  Math.floor(Math.random() * 3);
+                        if (lv11message === 1)
+                        {
+                        span = 'İpucu'
+                        text = 'Balonları vurmağ üçün click sayında limit yoxdur sizin mouse xarab ola bilər ancaq bizim güllə sayımız bitməz ))'
+                        }
+                        if (lv11message === 2)
+                        {
+                        span = 'Yenilik ?'
+                        text = 'Oyunumuzda nə yeniliklər görmək istərdiniz ? senanoguz@mail.ru ünvanına yazın göndərin :) '
+                        }
+                        if (lv11message === 3)
+                        {
+                        span = 'İpucu'
+                        text = 'Oyunda olan şarlar artıqca vaxtınız hər itirlən şara görə -1 saniyə geri gedir Tələsin'
+                        }
+                        $('.messagegamestartstrong').text(span)
+                        $('.messagegamestartspan').text(text)
+                        $('#levelphoto').attr('src','shekiller/lvprs/lv3.png').css('width','100px').css('height','120px')
+                       
                         level = 11
                         leveltimeprice = 20
                     }
                     if (totalscore + xal > 5000) {
+                        var lv12message =1 +  Math.floor(Math.random() * 3);
+                        if (lv12message === 1)
+                        {
+                        span = 'İpucu'
+                        text = 'Balonları vurmağ üçün click sayında limit yoxdur sizin mouse xarab ola bilər ancaq bizim güllə sayımız bitməz ))'
+                        }
+                        if (lv12message === 2)
+                        {
+                        span = 'Yenilik ?'
+                        text = 'Oyunumuzda nə yeniliklər görmək istərdiniz ? senanoguz@mail.ru ünvanına yazın göndərin :) '
+                        }
+                        if (lv12message === 3)
+                        {
+                        span = 'İpucu'
+                        text = 'Oyunda olan şarlar artıqca vaxtınız hər itirlən şara görə -1 saniyə geri gedir Tələsin'
+                        }
+                        $('.messagegamestartstrong').text(span)
+                        $('.messagegamestartspan').text(text)
+                        $('#levelphoto').attr('src','shekiller/lvprs/lv3.png').css('width','100px').css('height','120px')
+                       
                         level = 12
                         leveltimeprice = 25
                     }
@@ -658,7 +1131,7 @@ $(document).ready(function() {
                     var top = $('<div>')
                     bosalt = top
                     top.addClass('#top')
-                    top.css('z-index', '2')
+                    top.css('z-index', '99')
                     top.css('position', 'absolute').css('top', '-30px')
                     if (yarat < 1000) {
                         yarat += 1
@@ -679,6 +1152,17 @@ $(document).ready(function() {
                             // console.log(ballonsaniye)
                             top.hide()
                             xal = xal + ballonxal
+                            if (xal > bestscore){
+                                $('#best_score').text(`Best Score:  ${xal}`)
+                                $('#best_score').addClass('animated flipInX')
+                            }
+                            else{
+                                $('#best_score').text(`Best Score:  ${bestscore}`)
+                            }
+                            $('#new_score').text(`Sonuncu Oyun Scoru:  ${newscore}`)
+                            $('#total_score').text(`Total Score:  ${totalscore + xal}`)
+                            $('#usernames').text(`username:  ${username}`)
+
                             faiz()
                             xalprint.animate({ opacity: '0.4' }, "slow");
                             xalprint.animate({ opacity: '0.8' }, "slow");
@@ -809,7 +1293,7 @@ $(document).ready(function() {
                     baloncssWidth = '40px'
                     baloncssHeight = '40px'
                     balonstatus = 'bonusballoon'
-                    ballonxal = 5
+                    ballonxal = 2
                     ballonsaniye = 1250
                 }
                 if (balonrand == 16) {
@@ -817,7 +1301,7 @@ $(document).ready(function() {
                     baloncssWidth = '40px'
                     baloncssHeight = '40px'
                     balonstatus = 'bonusballoon'
-                    ballonxal = 5
+                    ballonxal = 2
                     ballonsaniye = 1250
                 }
                 if (balonrand == 17) {
@@ -825,7 +1309,7 @@ $(document).ready(function() {
                     baloncssWidth = '40px'
                     baloncssHeight = '40px'
                     balonstatus = 'bonusballoon'
-                    ballonxal = 5
+                    ballonxal = 3
                     ballonsaniye = 1500
 
                 }
@@ -852,7 +1336,7 @@ $(document).ready(function() {
                     baloncssWidth = '40px'
                     baloncssHeight = '40px'
                     balonstatus = 'bonusballoon'
-                    ballonxal = 6
+                    ballonxal = 3
                     ballonsaniye = bonusBalonRandomXal
                 }
             }
@@ -869,10 +1353,6 @@ $(document).ready(function() {
                 // bar.append(bar2)
                 // leveldiv.append(bar)
                 // leveldiv.append(kecid)
-                $('#best_score').text(`Best Score:  ${bestscore}`)
-                $('#new_score').text(`Sonuncu Oyun Scoru:  ${newscore}`)
-                $('#total_score').text(`Total Score:  ${totalscore}`)
-                $('#usernames').text(`username:  ${username.charAt(0).toUpperCase() + username.slice(1).toLowerCase()}`)
                 $('.esas').hide()
                 $('.helps').hide()
                 $('#haqqindashow').hide()
@@ -989,7 +1469,7 @@ $(document).ready(function() {
                     var top = $('<div>')
                     bosalt = top
                     top.addClass('#top')
-                    top.css('z-index', '2')
+                    top.css('z-index', '99')
                     top.css('position', 'absolute').css('top', '-30px')
                     if (yarat < 1000) {
                         yarat += 1

@@ -162,13 +162,6 @@ $(document).ready(function() {
 //     console.log(res.val())
 // })
 
-var arry = []
-
-    var ratingscore = firebase.database().ref('/rating')
-    ratingscore.orderByChild("bestscore").limitToFirst(10).on("child_added", function(snapshot) {
-        // console.log(snapshot.val());
-      });
-
  
 
     //reytinge qederki datani almaq

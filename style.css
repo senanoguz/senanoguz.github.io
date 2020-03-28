@@ -466,9 +466,10 @@ li {
     border-left: 0;
     border-right: 0;
     border-top: 0;
+    border-radius: 6px;
     border-bottom: 1px solid #999;
     outline: none;
-    background: transparent;
+    background: linear-gradient(60deg,#fff,#9bdd88);;
 }
 
 #bestscoreid {
@@ -480,6 +481,7 @@ li {
 }
 
 #totalscoreid {
+    margin-left: 10px;
     top: 200px;
     max-width: 200px;
     left: -400px;
@@ -488,9 +490,40 @@ li {
 }
 
 #levelid {
+    margin-left: 26px;
     top: 200px;
     max-width: 200px;
     left: -400px;
     color: black;
     /* background: linear-gradient(to right, #ee1c2e, #030113); */
 }
+ol > :nth-child(10) {
+    border-radius: 6px;
+    background: linear-gradient(60deg,#fff,#e53935);
+
+  }
+  ol > :nth-child(9) {
+    border-radius: 6px;
+    background: linear-gradient(60deg,#fff,#e55e35);
+
+  }
+  ol > :nth-child(8) {
+    border-radius: 6px;
+    background: linear-gradient(60deg,#fff,#d288dd);
+
+  }
+
+  /* ol > :nth-child(7) {
+  }
+  ol > :nth-child(6) {
+  }
+  ol > :nth-child(5) {
+  }
+  ol > :nth-child(4) {
+  }
+  ol > :nth-child(3) {
+  }
+  ol > :nth-child(2) {
+  }
+  ol > :nth-child(1) {
+  } */
